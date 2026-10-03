@@ -19,7 +19,7 @@ for (const [f, { d, body, raw }] of pages) {
   if (d.description.length < 110 || d.description.length > 175) issues.push(`description ${d.description.length}`);
   for (const m of body.matchAll(/\]\((\/[^)#\s]*)/g)) if (!urls.has(m[1]) && !m[1].startsWith('/kejsy/avito/')) issues.push(`битая ссылка ${m[1]}`);
   for (const r of d.related || []) if (!urls.has(r.url)) issues.push(`related → ${r.url}`);
-  if (/\/ceny\/|\/blog\//.test(body)) issues.push('ссылка на снятую страницу');
+  if (/\]\(\/(?:[^)]*\/)?(?:ceny|blog)\//.test(body)) issues.push('ссылка на снятую страницу');
   if (issues.length) { crit += issues.some((i) => i.startsWith('em-dash') || i.startsWith('битая')) ? 1 : 0; console.log(`${f}: ${issues.join('; ')}`); }
 }
 console.log(`страниц ${pages.size}, с критичными проблемами ${crit}`);
