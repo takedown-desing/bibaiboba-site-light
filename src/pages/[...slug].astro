@@ -1,0 +1,114 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import HomeHero from '../components/HomeHero.astro';
+import HomeSections from '../components/HomeSections.astro';
+import Faq from '../components/Faq.astro';
+import Related from '../components/Related.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import RollButton from '../components/RollButton.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Badge from '../components/Badge.astro';
+import images from '../data/images.json';
+import { withBase } from '../lib/site.mjs';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((entry) => {
+    const url = entry.data.url;
+    const slug = url === '/' ? undefined : url.replace(/^\/|\/$/g, '');
+    return { params: { slug }, props: { entry } };
+  });
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content, headings } = await render(entry);
+const img = (images as any)[d.slug] || {};
+const heroImg = img.hero;
+const toc = headings.filter((h) => h.depth === 2);
+const isForm = ['lead-form', 'form', 'contact'].includes(d.type);
+const formKind = d.type === 'lead-form' ? 'audit' : d.type === 'form' ? 'brief' : 'contact';
+const allCases = d.type === 'hub' ? (await getCollection('pages')).filter((p) => p.data.type === 'case').map((p) => p.data) : [];
+const caseHighlights = d.type === 'case' && d.case ? [
+  { value: d.case.contacts, label: 'обращений за месяц' },
+  { value: d.case.contact_price, label: 'цена обращения' },
+  { value: d.case.views, label: 'просмотров' },
+  { value: d.case.spend, label: 'затраты на продвижение' },
+] : null;
+const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlights : caseHighlights } : d;
+---
+<Base d={d}>
+  {d.type === 'home'
+    ? <HomeHero slot="hero" d={d} />
+    : <PageHero slot="hero" d={hd} image={heroImg} />}
+
+  {d.type === 'home' ? (
+    <HomeSections d={d}><Content /></HomeSections>
+  ) : (
+    <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-20">
+      <div class={`grid gap-12 ${toc.length > 2 && !isForm ? 'lg:grid-cols-[minmax(0,760px)_300px] lg:justify-between' : ''}`}>
+        <article class="prose-bb min-w-0">
+          <Content />
+          {img['inline-1'] && (
+            <figure class="!mt-10">
+              <img src={withBase(img['inline-1'].file)} alt={img['inline-1'].alt} width={img['inline-1'].width} height={img['inline-1'].height} loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover rounded-2xl" />
+            </figure>
+          )}
+          {d.type === 'hub' && allCases.length > 0 && (
+            <div class="case-grid !mt-10">
+              {allCases.map((c) => (
+                <a class="case-card" href={withBase(c.url)}>
+                  <span class="case-niche">{c.case?.niche}</span>
+                  <span class="case-metric"><b>{c.case?.contacts}</b> обращений за месяц</span>
+                  <span class="case-metric"><b>{c.case?.contact_price}</b> цена обращения</span>
+                  {c.case?.deltas && <span class="case-delta">{c.case.deltas}</span>}
+                  <span class="case-more">Читать кейс</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
+        {isForm ? (
+          <div class="lg:max-w-[560px]"><LeadForm kind={formKind} title={d.form_title || (formKind === 'audit' ? 'Заявка на экспресс-аудит' : formKind === 'brief' ? 'Бриф на проект' : 'Написать нам')} /></div>
+        ) : toc.length > 2 && (
+          <aside class="hidden lg:block">
+            <div class="sticky top-6 grid gap-4">
+              <nav aria-label="Содержание страницы" class="bg-[#F5F5F5] rounded-2xl p-5">
+                <p class="text-[12px] font-semibold uppercase tracking-[.06em] text-gray-600 mb-3">На этой странице</p>
+                <ol class="grid gap-2 text-[14px]">
+                  {toc.map((h) => <li><a class="text-gray-700 hover:text-[#F26522] transition-colors leading-snug block" href={`#${h.slug}`}>{h.text}</a></li>)}
+                  {d.faq?.length > 0 && <li><a class="text-gray-700 hover:text-[#F26522] transition-colors" href="#faq-title">Частые вопросы</a></li>}
+                </ol>
+              </nav>
+              <div class="bg-gray-900 text-white rounded-2xl p-5 grid gap-4">
+                <p class="text-[16px] font-medium leading-snug">Проверим ваш сайт или профиль Авито бесплатно</p>
+                <RollButton href="/audit-besplatno/" label="Получить аудит" size="sm" />
+              </div>
+            </div>
+          </aside>
+        )}
+      </div>
+      <div class="grid gap-16 mt-16 max-w-[1100px]">
+        {d.type !== 'legal' && <AuthorBox author={d.author} date={d.date_modified} />}
+        <Faq items={d.faq || []} />
+        <Related items={d.related || []} />
+      </div>
+    </div>
+  )}
+
+  {d.type !== 'legal' && !isForm && (
+    <section class="bg-[#F5F5F5]">
+      <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-28 grid lg:grid-cols-[1fr_auto] gap-8 items-end">
+        <div>
+          <Badge num="→" label="Следующий шаг" border="border-gray-300" />
+          <h2 class="text-[clamp(1.75rem,5vw,3.4rem)] font-medium leading-[1.08] tracking-[-0.03em] max-w-[20ch]">Начнём с бесплатного аудита: покажем, где теряются заявки</h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <RollButton href="/audit-besplatno/" label="Получить аудит" />
+          <RollButton href="/brif/" label="Заполнить бриф" variant="light" />
+        </div>
+      </div>
+    </section>
+  )}
+</Base>

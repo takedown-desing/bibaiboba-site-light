@@ -1,0 +1,113 @@
+---
+// Секции 2 и 3 промта (о нас, кейсы) + каналы, основной текст главной, FAQ.
+import Badge from './Badge.astro';
+import RollButton from './RollButton.astro';
+import Faq from './Faq.astro';
+import { getCollection } from 'astro:content';
+import { withBase } from '../lib/site.mjs';
+interface Props { d: any }
+const { d } = Astro.props;
+const IMG_S = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85';
+const IMG_L = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090133_c157d30b-a99a-4477-bec1-a446149ec3f2.png&w=1280&q=85';
+const cases = (await getCollection('pages')).filter((p) => p.data.type === 'case').map((p) => p.data);
+const featured = ['C-148', 'C-250'].map((id) => cases.find((c) => c.case?.id === id)).filter(Boolean);
+const rest = cases.filter((c) => !featured.includes(c)).slice(0, 6);
+const channels = d.channels || [];
+---
+<section class="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="px-5 sm:px-8 lg:px-12"><Badge num="1" label="Знакомьтесь: Биба и Боба" /></div>
+    <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-[26ch]">{d.about_title || 'Два практика с 2018 года: поиск и сайты, Авито. Один подрядчик на три канала заявок.'}</h2>
+    <div class="lg:hidden px-5 sm:px-8">
+      <p class="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">{d.about_text || d.lede}</p>
+      <RollButton href="/o-nas/" label="Подробнее о нас" />
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
+        <img src={IMG_S} alt="Работа над проектом за ноутбуком" class="sm:w-[45%] aspect-[438/346] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="438" height="346" />
+        <img src={IMG_L} alt="Планирование работ по проекту у доски" class="sm:w-[55%] aspect-[900/600] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="900" height="600" />
+      </div>
+    </div>
+    <div class="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 px-12">
+      <img src={IMG_S} alt="Работа над проектом за ноутбуком" class="self-end w-full aspect-[438/346] object-cover rounded-2xl" loading="lazy" decoding="async" width="438" height="346" />
+      <div class="self-start flex justify-end">
+        <div>
+          <p class="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 max-w-[30ch] mb-8">{d.about_text || d.lede}</p>
+          <RollButton href="/o-nas/" label="Подробнее о нас" />
+        </div>
+      </div>
+      <img src={IMG_L} alt="Планирование работ по проекту у доски" class="self-end w-full aspect-[3/2] object-cover rounded-2xl" loading="lazy" decoding="async" width="900" height="600" />
+    </div>
+  </div>
+</section>
+
+{channels.length > 0 && (
+  <section class="bg-white pb-16 sm:pb-20 lg:pb-28">
+    <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+      <Badge num="2" label="Три канала заявок" />
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6">
+        {channels.map((c, i) => (
+          <a href={withBase(c.url)} class="group bg-[#F5F5F5] hover:bg-[#ececec] rounded-2xl p-6 sm:p-8 flex flex-col gap-5 transition-colors duration-300">
+            <span class="text-[13px] text-gray-600">0{i + 1}</span>
+            <span class="text-[clamp(1.6rem,3vw,2.4rem)] font-medium tracking-[-0.03em] leading-none">{c.name}</span>
+            <span class="text-[15px] text-gray-700 leading-relaxed">{c.text}</span>
+            {c.facts?.length > 0 && (
+              <dl class="grid gap-0 mt-auto">
+                {c.facts.map((f) => <div class="grid grid-cols-[110px_1fr] gap-3 py-2 border-t border-gray-300 text-[13px]"><dt class="font-semibold">{f.k}</dt><dd class="text-gray-700">{f.v}</dd></div>)}
+              </dl>
+            )}
+            <span class="text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="bg-[#F5F5F5] pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="px-5 sm:px-8 lg:px-12"><Badge num="3" label="Кейсы с цифрами из кабинета Авито" border="border-gray-300" /></div>
+    <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] mb-10 sm:mb-14 lg:mb-16">Наши проекты</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
+      {featured.map((c, i) => (
+        <a href={withBase(c.url)} class="block">
+          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] md:aspect-square bg-[#6b6b6b]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white`}>
+            <span class="text-[13px] opacity-80">{c.case.scope}</span>
+            <div>
+              <p class="text-[clamp(2.6rem,7vw,5.5rem)] font-medium tracking-[-0.04em] leading-none tabular-nums">{c.case.contacts}</p>
+              <p class="mt-2 text-[15px] opacity-90">обращений за месяц · {c.case.contact_price} за обращение</p>
+            </div>
+            <span class={`absolute bottom-4 left-4 h-9 w-9 group-hover:w-[168px] rounded-full ${i === 0 ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} flex items-center overflow-hidden transition-all duration-300 ease-in-out`}>
+              <span class="flex-none w-9 h-9 grid place-items-center"><svg class="-rotate-45 group-hover:rotate-0 transition-transform duration-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+              <span class="text-[13px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Смотреть кейс</span>
+            </span>
+          </div>
+          <p class="text-[13px] sm:text-[14px] text-gray-600 mt-4 leading-relaxed">{c.case.deltas || c.lede}</p>
+          <p class="text-[14px] sm:text-[15px] font-semibold text-gray-900 mt-1">{c.case.niche}</p>
+        </a>
+      ))}
+    </div>
+    {rest.length > 0 && (
+      <div class="case-grid px-5 sm:px-8 lg:px-12 mt-8">
+        {rest.map((c) => (
+          <a class="case-card !bg-white" href={withBase(c.url)}>
+            <span class="case-niche">{c.case.niche}</span>
+            <span class="case-metric"><b>{c.case.contacts}</b> обращений за месяц</span>
+            <span class="case-metric"><b>{c.case.contact_price}</b> цена обращения</span>
+            <span class="case-more">Читать кейс</span>
+          </a>
+        ))}
+      </div>
+    )}
+    <div class="px-5 sm:px-8 lg:px-12 mt-10"><RollButton href="/kejsy/" label="Все кейсы" variant="dark" /></div>
+  </div>
+</section>
+
+<section class="bg-white py-16 sm:py-20 lg:py-28">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+    <Badge num="4" label="Чем мы занимаемся" />
+    <div class="prose-bb max-w-[820px]"><slot /></div>
+  </div>
+</section>
+
+<section class="bg-white pb-16 sm:pb-24">
+  <div class="max-w-[1100px] mx-auto px-5 sm:px-8 lg:px-12"><Faq items={d.faq || []} num={5} /></div>
+</section>

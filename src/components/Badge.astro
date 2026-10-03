@@ -1,0 +1,8 @@
+---
+interface Props { num: string | number; label: string; border?: string }
+const { num, label, border = 'border-gray-200' } = Astro.props;
+---
+<div class="flex items-center gap-3 mb-6 sm:mb-8">
+  <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white text-[11px] sm:text-[12px] font-semibold grid place-items-center" aria-hidden="true">{num}</span>
+  <span class={`text-[12px] sm:text-[13px] font-medium border ${border} rounded-full px-3 sm:px-4 py-1 sm:py-1.5`}>{label}</span>
+</div>

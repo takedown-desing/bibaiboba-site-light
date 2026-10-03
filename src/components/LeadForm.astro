@@ -1,0 +1,46 @@
+---
+// Форма заявки. На превью отправка отключена: показываем честное сообщение, данные никуда не уходят.
+import { withBase } from '../lib/site.mjs';
+interface Props { kind?: 'audit' | 'brief' | 'contact'; title?: string }
+const { kind = 'audit', title = 'Оставить заявку' } = Astro.props;
+const id = `form-${kind}`;
+---
+<form id={id} class="bg-white rounded-2xl p-5 sm:p-8 grid gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.08)]" data-preview-form novalidate>
+  <p class="text-[20px] font-medium tracking-[-0.01em]">{title}</p>
+  <label class="grid gap-1.5 text-[14px]" for={`${id}-name`}>Как к вам обращаться
+    <input id={`${id}-name`} name="name" required autocomplete="name" class="rounded-xl border border-gray-200 px-4 py-3 text-[16px] focus:border-gray-900 outline-none" />
+  </label>
+  <label class="grid gap-1.5 text-[14px]" for={`${id}-contact`}>Телефон или ник в мессенджере
+    <input id={`${id}-contact`} name="contact" required autocomplete="tel" class="rounded-xl border border-gray-200 px-4 py-3 text-[16px] focus:border-gray-900 outline-none" />
+  </label>
+  {kind !== 'contact' && (
+    <label class="grid gap-1.5 text-[14px]" for={`${id}-site`}>{kind === 'audit' ? 'Адрес сайта или ссылка на профиль Авито' : 'Сайт или профиль, если есть'}
+      <input id={`${id}-site`} name="site" inputmode="url" class="rounded-xl border border-gray-200 px-4 py-3 text-[16px] focus:border-gray-900 outline-none" />
+    </label>
+  )}
+  {kind !== 'audit' && (
+    <label class="grid gap-1.5 text-[14px]" for={`${id}-msg`}>Задача
+      <textarea id={`${id}-msg`} name="message" rows="4" class="rounded-xl border border-gray-200 px-4 py-3 text-[16px] focus:border-gray-900 outline-none"></textarea>
+    </label>
+  )}
+  <label class="flex gap-3 items-start text-[13px] text-gray-600" for={`${id}-consent`}>
+    <input id={`${id}-consent`} type="checkbox" name="consent" required class="mt-1 w-4 h-4 accent-[#F26522]" />
+    <span>Согласен на обработку персональных данных по <a class="underline" href={withBase('/politika/')}>политике конфиденциальности</a></span>
+  </label>
+  <button type="submit" class="group inline-flex items-center justify-between gap-3 rounded-full bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 text-[14px] font-medium transition-colors">
+    <span class="roll" aria-hidden="true"><span>Отправить заявку</span><span>Отправить заявку</span></span><span class="sr-only">Отправить заявку</span>
+    <span class="w-8 h-8 rounded-full bg-white grid place-items-center"><svg class="arrow-rot text-[#F26522]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+  </button>
+  <p class="text-[14px] text-gray-700 hidden" role="status" data-form-status></p>
+</form>
+<script>
+  document.querySelectorAll('[data-preview-form]').forEach((f) => {
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = f.querySelector('[data-form-status]');
+      if (!f.checkValidity()) { status.textContent = 'Заполните имя, контакт и подтвердите согласие.'; status.classList.remove('hidden'); f.reportValidity?.(); return; }
+      status.textContent = 'Это превью сайта: форма пока не отправляет данные. После запуска заявка придёт нам в Telegram.';
+      status.classList.remove('hidden');
+    });
+  });
+</script>

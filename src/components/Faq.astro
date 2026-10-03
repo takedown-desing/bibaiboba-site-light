@@ -1,0 +1,20 @@
+---
+// FAQ: текст вопросов и ответов идентичен FAQPage.mainEntity в JSON-LD (берётся из той же шапки).
+import Badge from './Badge.astro';
+interface Props { items: { q: string; a: string }[]; num?: number }
+const { items = [], num } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="faq" aria-labelledby="faq-title">
+    {num && <Badge num={num} label="Вопросы и ответы" />}
+    <h2 id="faq-title" class="text-[clamp(1.6rem,3.2vw,2.4rem)] font-medium leading-[1.12] tracking-[-0.02em] mb-8">Частые вопросы</h2>
+    <div>
+      {items.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+)}

@@ -1,0 +1,32 @@
+---
+import { withBase } from '../lib/site.mjs';
+import Logo from './Logo.astro';
+const cols = [
+  { title: 'Поиск', links: [['/seo/', 'SEO-продвижение'], ['/seo/yandex/', 'Продвижение в Яндексе'], ['/seo/internet-magazin/', 'Интернет-магазин'], ['/seo-specialist/', 'Частный SEO-специалист'], ['/kontent-dlya-sajta/', 'SEO-тексты']] },
+  { title: 'Нейросети и аудит', links: [['/geo/', 'GEO-оптимизация'], ['/geo/prodvizhenie-v-nejrosetyah/', 'Продвижение в нейросетях'], ['/geo/audit/', 'Аудит AI-готовности'], ['/audit-sajta/', 'SEO-аудит'], ['/audit-besplatno/', 'Бесплатный экспресс-аудит']] },
+  { title: 'Сайты', links: [['/sozdanie-sajtov/', 'Создание сайта'], ['/sozdanie-sajtov/lending/', 'Лендинг'], ['/redizajn-sajta/', 'Редизайн'], ['/dorabotka-sajta/', 'Доработка'], ['/podderzhka-sajta/', 'Поддержка']] },
+  { title: 'Авито и агентство', links: [['/avitolog/', 'Авитолог'], ['/prodvizhenie-na-avito/', 'Продвижение на Авито'], ['/kejsy/', 'Кейсы'], ['/o-nas/', 'О нас'], ['/kontakty/', 'Контакты']] },
+];
+---
+<footer class="bg-[#EFEFEF] mt-0">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-14 pb-10">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 justify-between">
+      <div class="max-w-sm">
+        <a href={withBase('/')} class="flex items-center gap-3 mb-4"><Logo /><span class="font-semibold">Биба и Боба</span></a>
+        <p class="text-[14px] text-gray-600 leading-relaxed">Агентство заявок: поиск, нейросети, Авито. Два практика, работаем удалённо по всей России.</p>
+      </div>
+      <nav class="grid grid-cols-2 md:grid-cols-4 gap-8 text-[14px]" aria-label="Карта разделов">
+        {cols.map((c) => (
+          <div>
+            <p class="font-semibold mb-3">{c.title}</p>
+            <ul class="grid gap-2">{c.links.map(([h, t]) => <li><a class="text-gray-600 hover:text-gray-900 transition-colors" href={withBase(h)}>{t}</a></li>)}</ul>
+          </div>
+        ))}
+      </nav>
+    </div>
+    <div class="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row gap-3 justify-between text-[13px] text-gray-600">
+      <span>© 2026 Биба и Боба. Превью сайта, закрыто от индексации.</span>
+      <a class="hover:text-gray-900" href={withBase('/politika/')}>Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>

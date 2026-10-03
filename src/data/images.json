@@ -1,0 +1,62 @@
+{
+ "audit-sajta": {
+  "hero": {
+   "file": "/img/audit-sajta-hero.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "Специалист проверяет данные сайта перед аудитом",
+   "pexels_id": 669621,
+   "pexels_url": "https://www.pexels.com/photo/pie-graph-illustration-669621/",
+   "photographer": "Lukas Blazek"
+  },
+  "inline-1": {
+   "file": "/img/audit-sajta-inline-1.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "График скорости загрузки сайта при техническом аудите",
+   "pexels_id": 6770775,
+   "pexels_url": "https://www.pexels.com/photo/graph-of-the-movement-of-the-value-of-bitcoin-6770775/",
+   "photographer": "Alesia  Kozik"
+  }
+ },
+ "avitolog": {
+  "hero": {
+   "file": "/img/avitolog-hero.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "Специалист работает с объявлениями на торговой площадке за ноутбуком",
+   "pexels_id": 7289723,
+   "pexels_url": "https://www.pexels.com/photo/woman-taking-photo-of-the-product-7289723/",
+   "photographer": "Kampus Production"
+  },
+  "inline-1": {
+   "file": "/img/avitolog-inline-1.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "Аналитика показателей объявления на экране компьютера",
+   "pexels_id": 106344,
+   "pexels_url": "https://www.pexels.com/photo/black-samsung-tablet-computer-106344/",
+   "photographer": "AS Photography"
+  }
+ },
+ "sozdanie-sajtov": {
+  "hero": {
+   "file": "/img/sozdanie-sajtov-hero.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "Разработчик продумывает структуру сайта на планшете",
+   "pexels_id": 196645,
+   "pexels_url": "https://www.pexels.com/photo/white-printer-paper-196645/",
+   "photographer": "picjumbo.com"
+  },
+  "inline-1": {
+   "file": "/img/sozdanie-sajtov-inline-1.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": "Команда обсуждает прототип сайта у доски",
+   "pexels_id": 1181343,
+   "pexels_url": "https://www.pexels.com/photo/man-wearing-blue-dress-shirt-facing-whiteboard-1181343/",
+   "photographer": "Christina Morillo"
+  }
+ }
+}

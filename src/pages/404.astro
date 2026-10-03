@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import RollButton from '../components/RollButton.astro';
+const d = { url: '/404/', slug: '404', type: 'page', title: 'Страница не найдена | Биба и Боба', description: 'Такой страницы нет. Перейдите на главную или в раздел услуг агентства Биба и Боба.', h1: 'Страница не найдена', author: 'both' };
+---
+<Base d={d}>
+  <section slot="hero" class="bg-[#EFEFEF]"><Nav /></section>
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-24 sm:py-32">
+    <p class="text-[13px] tracking-wide mb-6">Ошибка 404</p>
+    <h1 class="text-[clamp(2rem,6vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] max-w-[18ch]">Биба искал эту страницу, Боба тоже. Не нашли.</h1>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4"><RollButton href="/" label="На главную" /><RollButton href="/kejsy/" label="Смотреть кейсы" variant="light" /></div>
+  </div>
+</Base>

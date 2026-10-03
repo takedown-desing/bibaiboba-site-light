@@ -1,0 +1,80 @@
+---
+// Навигация-пилюля из промта 1 + мобильная нижняя шторка.
+import Logo from './Logo.astro';
+import RollButton from './RollButton.astro';
+import { withBase } from '../lib/site.mjs';
+interface Props { current?: string }
+const { current = '' } = Astro.props;
+const main = [
+  { href: '/seo/', label: 'SEO' },
+  { href: '/geo/', label: 'Нейросети' },
+  { href: '/sozdanie-sajtov/', label: 'Сайты' },
+  { href: '/avitolog/', label: 'Авито' },
+];
+const extra = [
+  { href: '/audit-sajta/', label: 'Аудит' },
+  { href: '/kejsy/', label: 'Кейсы' },
+  { href: '/o-nas/', label: 'О нас' },
+];
+const all = [...main, ...extra, { href: '/kontakty/', label: 'Контакты' }];
+const isActive = (h: string) => current === h || (h !== '/' && current.startsWith(h));
+---
+<header class="relative z-20 max-w-[1440px] mx-auto w-full p-2 sm:p-3">
+  <nav class="bg-white rounded-full p-[5px] flex items-center justify-between" aria-label="Основная навигация">
+    <div class="flex items-center gap-6">
+      <a href={withBase('/')} class="flex items-center gap-3 rounded-full" aria-label="Биба и Боба, на главную">
+        <Logo />
+        <span class="hidden sm:inline text-[14px] font-semibold tracking-tight pr-1">Биба и Боба</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-6 text-[14px]">
+        {main.map((l) => <li><a href={withBase(l.href)} aria-current={isActive(l.href) ? 'page' : undefined} class={`transition-colors duration-300 hover:text-gray-500 ${isActive(l.href) ? 'text-[#F26522]' : 'text-gray-900'}`}>{l.label}</a></li>)}
+        {extra.map((l) => <li class="hidden xl:block"><a href={withBase(l.href)} aria-current={isActive(l.href) ? 'page' : undefined} class={`transition-colors duration-300 hover:text-gray-500 ${isActive(l.href) ? 'text-[#F26522]' : 'text-gray-900'}`}>{l.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="hidden md:flex items-center gap-5">
+      <span class="hidden lg:inline text-[13px] text-gray-600">Работаем удалённо по всей России</span>
+      <span class="flex items-center gap-1.5 text-[13px] text-gray-600">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span data-clock>--:--</span> по Москве
+      </span>
+      <RollButton href="/brif/" label="Обсудить проект" variant="dark" size="sm" />
+    </div>
+    <button type="button" class="md:hidden bg-gray-900 text-white rounded-full pl-4 pr-3 py-2 text-[13px] font-medium flex items-center gap-2" data-menu-open aria-expanded="false" aria-controls="mobile-menu">
+      Меню
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 z-50 hidden" data-menu role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-500" data-menu-backdrop></div>
+  <div class="absolute inset-x-0 bottom-0 mx-3 mb-3 bg-white rounded-2xl p-5 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]" data-menu-sheet>
+    <div class="flex items-center justify-between mb-5">
+      <span class="text-[13px] text-gray-600 border border-gray-200 rounded-full px-3 py-1"><span data-clock>--:--</span> по Москве</span>
+      <button type="button" class="bg-gray-900 text-white rounded-full pl-4 pr-3 py-2 text-[13px] font-medium flex items-center gap-2" data-menu-close>
+        Закрыть
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <ul class="grid gap-1 mb-6">
+      {all.map((l) => <li><a href={withBase(l.href)} class="block text-[28px] leading-[32px] font-medium py-1 text-gray-900">{l.label}</a></li>)}
+    </ul>
+    <RollButton href="/brif/" label="Начать проект" />
+  </div>
+</div>
+
+<script>
+  const fmt = () => new Intl.DateTimeFormat('ru-RU', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Moscow', hour12: false }).format(new Date());
+  const tick = () => document.querySelectorAll('[data-clock]').forEach((el) => (el.textContent = fmt()));
+  tick(); setInterval(tick, 1000);
+  const menu = document.querySelector('[data-menu]');
+  const sheet = document.querySelector('[data-menu-sheet]');
+  const backdrop = document.querySelector('[data-menu-backdrop]');
+  const openBtn = document.querySelector('[data-menu-open]');
+  const open = () => { menu.classList.remove('hidden'); requestAnimationFrame(() => { sheet.classList.remove('translate-y-full'); backdrop.classList.remove('opacity-0'); }); openBtn?.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+  const close = () => { sheet.classList.add('translate-y-full'); backdrop.classList.add('opacity-0'); openBtn?.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; setTimeout(() => menu.classList.add('hidden'), 500); };
+  openBtn?.addEventListener('click', open);
+  document.querySelector('[data-menu-close]')?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.classList.contains('hidden')) close(); });
+</script>

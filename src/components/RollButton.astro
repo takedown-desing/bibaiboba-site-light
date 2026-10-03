@@ -1,0 +1,19 @@
+---
+// Кнопка из промта: текст перекатывается вверх при наведении, стрелка в круге поворачивается на -45°.
+import { withBase } from '../lib/site.mjs';
+interface Props { href: string; label: string; variant?: 'accent' | 'dark' | 'light'; size?: 'sm' | 'md'; class?: string }
+const { href, label, variant = 'accent', size = 'md', class: cls = '' } = Astro.props;
+const bg = variant === 'accent' ? 'bg-[#F26522] hover:bg-[#e05a1a] text-white' : variant === 'dark' ? 'bg-gray-900 text-white hover:bg-gray-800' : 'bg-white text-gray-900 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)]';
+const circle = variant === 'light' ? 'bg-gray-900 text-white' : 'bg-white';
+const arrowColor = variant === 'accent' ? 'text-[#F26522]' : variant === 'dark' ? 'text-gray-900' : 'text-white';
+const pad = size === 'sm' ? 'pl-5 pr-2 py-2 text-[13px]' : 'pl-5 sm:pl-6 pr-2 py-2 text-[13px] sm:text-[14px]';
+const dot = size === 'sm' ? 'w-6 h-6' : 'w-7 h-7 sm:w-8 sm:h-8';
+const url = href.startsWith('http') ? href : withBase(href);
+---
+<a href={url} class={`group inline-flex items-center gap-3 rounded-full font-medium transition-colors duration-300 ${bg} ${pad} ${cls}`}>
+  <span class="roll" aria-hidden="true"><span>{label}</span><span>{label}</span></span>
+  <span class="sr-only">{label}</span>
+  <span class={`${dot} rounded-full ${circle} grid place-items-center flex-none`}>
+    <svg class={`arrow-rot ${arrowColor}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </span>
+</a>
