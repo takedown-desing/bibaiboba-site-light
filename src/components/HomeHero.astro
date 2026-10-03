@@ -9,10 +9,9 @@ const cta = d.hero_cta?.primary || { href: '/audit-besplatno/', label: 'Полу
 ---
 <section class="relative min-h-[100svh] hero-fallback overflow-x-clip flex flex-col">
   <div class="absolute inset-0 z-10 pointer-events-none" aria-hidden="true"><ShaderBg client:only="react" /></div>
-  <div class="relative z-20"><Nav current="/" /></div>
+  <div class="relative z-40"><Nav current="/" /></div>
   <div class="flex-1"></div>
   <div class="relative z-20 max-w-[1440px] mx-auto w-full px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
-    <p class="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8">{d.eyebrow || 'Биба и Боба'}</p>
     <h1 class="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 max-w-[24ch] text-balance">{d.h1}</h1>
     {d.lede && <p class="mt-5 sm:mt-6 text-[15px] sm:text-[17px] leading-[1.6] text-gray-700 max-w-[58ch]">{d.lede}</p>}
     <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-5 sm:items-center">

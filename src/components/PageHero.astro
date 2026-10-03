@@ -11,12 +11,11 @@ const cta = d.hero_cta || {};
 ---
 <section class="relative hero-fallback overflow-x-clip">
   <div class="absolute inset-0 z-10 pointer-events-none" aria-hidden="true"><ShaderBg client:only="react" /></div>
-  <div class="relative z-20"><Nav current={d.url} /></div>
+  <div class="relative z-40"><Nav current={d.url} /></div>
   <div class="relative z-20 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-14 lg:pt-20 pb-14 sm:pb-16 lg:pb-20">
     <Breadcrumbs items={d.breadcrumbs || []} />
     <div class={`grid gap-10 ${image ? 'lg:grid-cols-[1fr_38%] items-end' : ''}`}>
       <div>
-        {d.eyebrow && <p class="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8">{d.eyebrow}</p>}
         <h1 class="text-[clamp(1.75rem,7vw,3.6rem)] sm:text-[clamp(2.2rem,4.6vw,3.6rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 max-w-[22ch] text-balance">{d.h1}</h1>
         {d.lede && <p class="mt-5 sm:mt-7 text-[16px] sm:text-[18px] leading-[1.6] text-gray-700 max-w-[60ch]">{d.lede}</p>}
         <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5 sm:items-center">

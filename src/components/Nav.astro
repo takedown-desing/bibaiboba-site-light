@@ -14,9 +14,8 @@ const chev = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke
 <header class="relative z-30 max-w-[1440px] mx-auto w-full p-2 sm:p-3">
   <nav class="bg-white rounded-full p-[5px] flex items-center justify-between" aria-label="Основная навигация">
     <div class="flex items-center gap-6">
-      <a href={withBase('/')} class="flex items-center gap-3 rounded-full" aria-label="Биба и Боба, на главную">
-        <Logo />
-        <span class="hidden sm:inline text-[14px] font-semibold tracking-tight pr-1">Биба и Боба</span>
+      <a href={withBase('/')} class="flex items-center rounded-full pl-1.5 pr-1" aria-label="На главную">
+        <Logo size={36} />
       </a>
       <ul class="hidden lg:flex items-center gap-1 text-[14px]">
         {nav.map((g, i) => (

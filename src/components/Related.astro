@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../lib/site.mjs';
+import { previewFor } from '../lib/previews.mjs';
 interface Props { items: { url: string; title: string; text?: string }[] }
 const { items = [] } = Astro.props;
 ---
@@ -8,10 +9,11 @@ const { items = [] } = Astro.props;
     <h2 id="rel-title" class="text-[clamp(1.4rem,2.6vw,2rem)] font-medium tracking-[-0.02em] mb-6">Смотрите также</h2>
     <div class="cards" data-count={items.length}>
       {items.map((r) => (
-        <a href={withBase(r.url)} class="group bg-[#F5F5F5] min-w-0 hover:bg-[#ececec] rounded-2xl p-5 sm:p-6 transition-colors duration-300 flex flex-col gap-2">
-          <span class="text-[16px] font-semibold text-gray-900">{r.title}</span>
-          {r.text && <span class="text-[14px] text-gray-600 leading-relaxed">{r.text}</span>}
-          <span class="mt-auto pt-3 text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <a href={withBase(r.url)} class="group bg-[#F5F5F5] min-w-0 hover:bg-[#ececec] rounded-2xl p-2.5 pb-5 transition-colors duration-300 flex flex-col gap-2">
+          {previewFor(r.url) && <span class="block overflow-hidden rounded-xl mb-2"><img src={withBase(previewFor(r.url).file)} alt={previewFor(r.url).alt || r.title} class="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" decoding="async" width="1200" height="800" /></span>}
+          <span class="px-2.5 text-[16px] font-semibold text-gray-900">{r.title}</span>
+          {r.text && <span class="px-2.5 text-[14px] text-gray-600 leading-relaxed">{r.text}</span>}
+          <span class="px-2.5 mt-auto pt-3 text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </a>
       ))}
     </div>

@@ -12,7 +12,7 @@ const cols = [
   <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-14 pb-10">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 justify-between">
       <div class="max-w-sm">
-        <a href={withBase('/')} class="flex items-center gap-3 mb-4"><Logo /><span class="font-semibold">Биба и Боба</span></a>
+        <a href={withBase('/')} class="inline-flex mb-4" aria-label="На главную"><Logo size={44} /></a>
         <p class="text-[14px] text-gray-600 leading-relaxed">Агентство заявок: поиск, нейросети, Авито. Два практика, работаем удалённо по всей России.</p>
       </div>
       <nav class="grid grid-cols-2 md:grid-cols-4 gap-8 text-[14px]" aria-label="Карта разделов">
@@ -25,7 +25,7 @@ const cols = [
       </nav>
     </div>
     <div class="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row gap-3 justify-between text-[13px] text-gray-600">
-      <span>© 2026 Биба и Боба. Превью сайта, закрыто от индексации.</span>
+      <span>© 2026. Превью сайта, закрыто от индексации.</span>
       <a class="hover:text-gray-900" href={withBase('/politika/')}>Политика конфиденциальности</a>
     </div>
   </div>

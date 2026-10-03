@@ -5,6 +5,8 @@ import RollButton from './RollButton.astro';
 import Faq from './Faq.astro';
 import { getCollection } from 'astro:content';
 import { withBase } from '../lib/site.mjs';
+import { previewFor } from '../lib/previews.mjs';
+import CaseCard from './CaseCard.astro';
 interface Props { d: any }
 const { d } = Astro.props;
 const IMG_S = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85';
@@ -37,16 +39,17 @@ const channels = d.channels || [];
       <Badge num="2" label="Три канала заявок" />
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:[&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1">
         {channels.map((c, i) => (
-          <a href={withBase(c.url)} class="group bg-[#F5F5F5] hover:bg-[#ececec] rounded-2xl p-6 sm:p-8 flex flex-col gap-5 transition-colors duration-300">
-            <span class="text-[13px] text-gray-600">0{i + 1}</span>
-            <span class="text-[clamp(1.6rem,3vw,2.4rem)] font-medium tracking-[-0.03em] leading-none">{c.name}</span>
-            <span class="text-[15px] text-gray-700 leading-relaxed">{c.text}</span>
+          <a href={withBase(c.url)} class="group bg-[#F5F5F5] hover:bg-[#ececec] rounded-2xl p-3 pb-6 sm:pb-8 flex flex-col gap-5 transition-colors duration-300">
+            {previewFor(c.url) && <span class="block overflow-hidden rounded-xl"><img src={withBase(previewFor(c.url).file)} alt={previewFor(c.url).alt || c.name} class="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" decoding="async" width="1200" height="800" /></span>}
+            <span class="text-[13px] text-gray-600 px-3 sm:px-5">0{i + 1}</span>
+            <span class="px-3 sm:px-5 text-[clamp(1.6rem,3vw,2.4rem)] font-medium tracking-[-0.03em] leading-none">{c.name}</span>
+            <span class="px-3 sm:px-5 text-[15px] text-gray-700 leading-relaxed">{c.text}</span>
             {c.facts?.length > 0 && (
-              <dl class="grid gap-0 mt-auto">
+              <dl class="grid gap-0 mt-auto px-3 sm:px-5">
                 {c.facts.map((f) => <div class="grid grid-cols-[minmax(0,110px)_minmax(0,1fr)] gap-3 py-2 border-t border-gray-300 text-[13px]"><dt class="font-semibold">{f.k}</dt><dd class="text-gray-700">{f.v}</dd></div>)}
               </dl>
             )}
-            <span class="text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <span class="px-3 sm:px-5 text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
           </a>
         ))}
       </div>
@@ -61,8 +64,10 @@ const channels = d.channels || [];
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
       {featured.map((c, i) => (
         <a href={withBase(c.url)} class="block">
-          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] bg-[#6b6b6b]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white`}>
-            <span class="text-[13px] opacity-80">{c.case.scope}</span>
+          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] bg-[#3a3a3a]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white isolate`}>
+            {previewFor(c.url) && <img src={withBase(previewFor(c.url).file)} alt={previewFor(c.url).alt || c.case.niche} class="absolute inset-0 -z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1200" height="800" />}
+            <span class="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/20" aria-hidden="true"></span>
+            <span class="text-[13px] opacity-90">{c.case.scope}</span>
             <div>
               <p class="text-[clamp(2.6rem,7vw,5.5rem)] font-medium tracking-[-0.04em] leading-none tabular-nums">{c.case.contacts}</p>
               <p class="mt-2 text-[15px] opacity-90">обращений за месяц · {c.case.contact_price} за обращение</p>
@@ -79,14 +84,7 @@ const channels = d.channels || [];
     </div>
     {rest.length > 0 && (
       <div class="case-grid px-5 sm:px-8 lg:px-12 mt-8" data-count={rest.length}>
-        {rest.map((c) => (
-          <a class="case-card !bg-white" href={withBase(c.url)}>
-            <span class="case-niche">{c.case.niche}</span>
-            <span class="case-metric"><b>{c.case.contacts}</b> обращений за месяц</span>
-            <span class="case-metric"><b>{c.case.contact_price}</b> цена обращения</span>
-            <span class="case-more">Читать кейс</span>
-          </a>
-        ))}
+        {rest.map((c) => <CaseCard c={c} white />)}
       </div>
     )}
     <div class="px-5 sm:px-8 lg:px-12 mt-10"><RollButton href="/kejsy/" label="Все кейсы" variant="dark" /></div>

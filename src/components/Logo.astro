@@ -1,4 +1,13 @@
 ---
-interface Props { size?: 'sm' | 'md' }
+// Знак агентства без названия: облачко сообщения (заявка) с меткой-спутником в вырезе.
+// Большой круг и малый круг — два партнёра; метка — новое обращение.
+interface Props { size?: number; class?: string; tone?: 'ink' | 'white' }
+const { size = 38, class: cls = '', tone = 'ink' } = Astro.props;
+const id = 'bbm-' + Math.random().toString(36).slice(2, 9);
+const body = tone === 'white' ? '#ffffff' : '#111827';
 ---
-<span class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-full grid place-items-center text-white text-[10px] sm:text-[11px] font-bold tracking-tight" aria-hidden="true">ББ</span>
+<svg class={cls} width={size} height={size} viewBox="2 4 42 42" aria-hidden="true" focusable="false">
+  <defs><mask id={id} maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48"><rect width="48" height="48" fill="#fff" /><circle cx="34" cy="14" r="11" fill="#000" /></mask></defs>
+  <g mask={`url(#${id})`} fill={body}><circle cx="21" cy="27" r="17" /><path d="M6 32 L4 45 L15 41 Z" /></g>
+  <circle cx="34" cy="14" r="7" fill="#F26522" />
+</svg>
