@@ -9,7 +9,7 @@ interface Props { d: any; image?: any }
 const { d, image } = Astro.props;
 const cta = d.hero_cta || {};
 ---
-<section class="relative bg-[#EFEFEF] overflow-hidden">
+<section class="relative hero-fallback overflow-hidden">
   <div class="absolute inset-0 z-10 pointer-events-none" aria-hidden="true"><ShaderBg client:only="react" /></div>
   <div class="relative z-20"><Nav current={d.url} /></div>
   <div class="relative z-20 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-14 lg:pt-20 pb-14 sm:pb-16 lg:pb-20">

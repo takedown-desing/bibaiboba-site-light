@@ -17,7 +17,10 @@ for (const f of fs.readdirSync(SRC).filter((x) => x.endsWith('.md'))) {
     const d = yaml.load(m[1]);
     for (const k of ['url', 'slug', 'type', 'title', 'description', 'h1']) if (!d[k]) throw new Error(`нет поля ${k}`);
   } catch (e) { bad.push(`${f}: ${e.message}`); continue; }
-  fs.writeFileSync(path.join(DST, f), raw.replace(/\r\n/g, '\n'));
+  // Типографика: числовые диапазоны через короткое тире («31–62»), только в теле, даты ISO не трогаем.
+  const enDash = (s) => s.replace(/(^|[^\d\-/.])(\d{1,3})-(\d{1,3})(?=[^\d\-/]|$)/gm, '$1$2–$3');
+  const parts = raw.replace(/\r\n/g, '\n').match(/^(---\n[\s\S]*?\n---\n)([\s\S]*)$/);
+  fs.writeFileSync(path.join(DST, f), parts ? enDash(parts[1]) + enDash(parts[2]) : raw);
   ok++;
 }
 console.log(`скопировано ${ok} файлов`);

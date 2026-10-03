@@ -43,7 +43,7 @@ const channels = d.channels || [];
   <section class="bg-white pb-16 sm:pb-20 lg:pb-28">
     <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
       <Badge num="2" label="Три канала заявок" />
-      <div class="grid md:grid-cols-3 gap-5 sm:gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:[&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1">
         {channels.map((c, i) => (
           <a href={withBase(c.url)} class="group bg-[#F5F5F5] hover:bg-[#ececec] rounded-2xl p-6 sm:p-8 flex flex-col gap-5 transition-colors duration-300">
             <span class="text-[13px] text-gray-600">0{i + 1}</span>
@@ -51,7 +51,7 @@ const channels = d.channels || [];
             <span class="text-[15px] text-gray-700 leading-relaxed">{c.text}</span>
             {c.facts?.length > 0 && (
               <dl class="grid gap-0 mt-auto">
-                {c.facts.map((f) => <div class="grid grid-cols-[110px_1fr] gap-3 py-2 border-t border-gray-300 text-[13px]"><dt class="font-semibold">{f.k}</dt><dd class="text-gray-700">{f.v}</dd></div>)}
+                {c.facts.map((f) => <div class="grid grid-cols-[minmax(0,110px)_minmax(0,1fr)] gap-3 py-2 border-t border-gray-300 text-[13px]"><dt class="font-semibold">{f.k}</dt><dd class="text-gray-700">{f.v}</dd></div>)}
               </dl>
             )}
             <span class="text-[13px] font-medium inline-flex items-center gap-2">Подробнее <svg class="arrow-rot" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
