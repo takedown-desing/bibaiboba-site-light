@@ -250,3 +250,66 @@ body { background: #fff; color: var(--ink); font-family: ui-sans-serif, system-u
   .sec-head { gap: 10px; }
   .sec-num { width: 28px; height: 28px; font-size: 11px; }
 }
+
+/* ================= Мозаика кейсов (как портфолио addu.ru) ================= */
+.mosaic-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.mosaic-tabs button { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 15px; font-weight: 500; cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+.mosaic-tabs button span { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.mosaic-tabs button:hover { border-color: var(--ink); }
+.mosaic-tabs button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.mosaic-tabs button[aria-pressed="true"] span { color: rgba(255,255,255,.6); }
+.mosaic-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.mosaic-tile { --fg: #fff; --sub: rgba(255,255,255,.82); position: relative; grid-column: span 12; min-height: 300px; border-radius: 24px; padding: clamp(20px, 2.6vw, 34px); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; color: var(--fg); text-decoration: none; overflow: hidden; isolation: isolate; transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.mosaic-tile[hidden] { display: none; }
+.mosaic-tile:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -30px rgba(17,24,39,.55); }
+.mosaic-tile.t-orange { background: #F26522; }
+.mosaic-tile.t-ink { background: #111827; }
+.mosaic-tile.t-sand { background: #E9E1D4; --fg: #111827; --sub: #4b5563; }
+.mosaic-tile.t-slate { background: #273445; }
+.mosaic-tile.t-steel { background: #D5DDE5; --fg: #111827; --sub: #4b5563; }
+.mosaic-tile.t-olive { background: #3B4536; }
+.mt-top { position: relative; z-index: 2; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mt-num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mt-bottom { position: relative; z-index: 2; display: grid; gap: 8px; max-width: min(560px, 62%); }
+.mt-title { font-size: clamp(26px, 3vw, 44px); line-height: 1.02; font-weight: 600; letter-spacing: -.03em; text-wrap: balance; }
+.mt-sub { font-size: clamp(16px, 1.4vw, 20px); line-height: 1.35; color: var(--sub); }
+.mt-meta { font-size: 13px; color: var(--sub); }
+.mt-photo { position: absolute; z-index: 0; top: 0; right: 0; width: 62%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%); mask-image: linear-gradient(to right, transparent 0%, #000 45%); opacity: .9; transition: transform .8s var(--ease); }
+.mosaic-tile:hover .mt-photo { transform: scale(1.04); }
+.mosaic-tile.has-art { overflow: visible; }
+.mt-art { position: absolute; z-index: 1; right: 2%; bottom: -6%; height: 112%; width: auto; max-width: 58%; object-fit: contain; filter: drop-shadow(0 24px 30px rgba(0,0,0,.28)); transition: transform .8s var(--ease); pointer-events: none; }
+.mosaic-tile:hover .mt-art { transform: translateY(-6px) scale(1.03); }
+@media (min-width: 768px) {
+  .mosaic-tile.w4, .mosaic-tile.w6, .mosaic-tile.w8 { grid-column: span 6; }
+  .mosaic-tile.w12 { grid-column: span 12; }
+  .mosaic-tile { min-height: 340px; }
+}
+@media (min-width: 1100px) {
+  .mosaic-tile.w4 { grid-column: span 4; }
+  .mosaic-tile.w6 { grid-column: span 6; }
+  .mosaic-tile.w8 { grid-column: span 8; }
+  .mosaic-tile.w4 .mt-bottom { max-width: 100%; }
+  .mosaic-tile.w4 .mt-photo { width: 100%; -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); height: 70%; }
+  .mosaic-tile.w4.has-art .mt-art { height: 62%; max-width: 80%; top: 14%; bottom: auto; right: 6%; }
+  .mosaic-tile.w12 .mt-photo { width: 52%; }
+}
+@media (max-width: 767px) {
+  .mosaic-tile { min-height: 280px; }
+  .mt-bottom { max-width: 100%; }
+  .mt-photo { width: 100%; -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 80%); mask-image: linear-gradient(to bottom, #000 0%, transparent 80%); height: 65%; opacity: .55; }
+  .mt-art { height: 60%; max-width: 70%; top: 10%; bottom: auto; right: 4%; }
+}
+.mt-num { padding: 7px 12px; border-radius: 999px; background: rgba(0,0,0,.28); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); letter-spacing: .08em; align-self: flex-start; }
+.mosaic-tile.t-sand .mt-num, .mosaic-tile.t-steel .mt-num { background: rgba(255,255,255,.72); }
+.mt-top > span:first-child { padding-top: 7px; }
+@media (max-width: 767px) {
+  .mosaic-tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; padding-inline: 16px; scrollbar-width: none; }
+  .mosaic-tabs::-webkit-scrollbar { display: none; }
+  .mosaic-tabs button { flex: none; }
+  .mt-top { flex-direction: column-reverse; align-items: flex-start; gap: 10px; }
+  .mt-top > span:first-child { padding-top: 0; }
+}
+.mosaic-tile.has-art .mt-art { max-width: 40%; right: 3%; }
+.mosaic-tile.has-art .mt-bottom { max-width: 56%; }
+@media (min-width: 1100px) { .mosaic-tile.w4.has-art .mt-bottom { max-width: 100%; } .mosaic-tile.w4.has-art .mt-art { max-width: 70%; } }
+@media (max-width: 767px) { .mosaic-tile.has-art .mt-bottom { max-width: 100%; } .mosaic-tile.has-art .mt-art { max-width: 60%; } }

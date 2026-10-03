@@ -13,6 +13,7 @@ import Badge from '../components/Badge.astro';
 import images from '../data/images.json';
 import { withBase } from '../lib/site.mjs';
 import CaseCard from '../components/CaseCard.astro';
+import CaseMosaic from '../components/CaseMosaic.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -46,7 +47,12 @@ const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlig
 
   {d.type === 'home' ? (
     <HomeSections d={d}><Content /></HomeSections>
-  ) : (
+  ) : (<>
+    {d.type === 'hub' && allCases.length > 0 && (
+      <section class="bg-[#F5F5F5] pt-8 sm:pt-14" aria-label="Кейсы">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12"><CaseMosaic /></div>
+      </section>
+    )}
     <div class="bg-[#F5F5F5]">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-14">
         <div class={`grid gap-6 lg:gap-8 ${isForm ? 'xl:grid-cols-[minmax(0,1fr)_minmax(0,520px)] items-start' : toc.length > 2 ? 'xl:grid-cols-[minmax(0,1fr)_280px] items-start' : ''}`}>
@@ -54,14 +60,6 @@ const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlig
             <article class="prose-bb flow">
               <Content />
             </article>
-            {d.type === 'hub' && allCases.length > 0 && (
-              <section class="sec">
-                <div class="sec-head"><span class="sec-num" aria-hidden="true">★</span><h2 id="vse-kejsy">Все кейсы</h2></div>
-                <div class="case-grid cards" data-count={allCases.length}>
-                  {allCases.map((c) => <CaseCard c={c} />)}
-                </div>
-              </section>
-            )}
             {!isForm && d.type !== 'legal' && <div class="sec sec-tight"><AuthorBox author={d.author} date={d.date_modified} /></div>}
             {d.faq?.length > 0 && <div class="sec"><Faq items={d.faq} /></div>}
             {d.related?.length > 0 && <div class="sec"><Related items={d.related} /></div>}
@@ -88,7 +86,7 @@ const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlig
         </div>
       </div>
     </div>
-  )}
+  </>)}
 
   {d.type !== 'legal' && !isForm && (
     <section class="bg-[#F5F5F5]">

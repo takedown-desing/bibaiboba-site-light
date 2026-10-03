@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import { withBase } from '../lib/site.mjs';
 import { previewFor } from '../lib/previews.mjs';
 import CaseCard from './CaseCard.astro';
+import CaseMosaic from './CaseMosaic.astro';
 interface Props { d: any }
 const { d } = Astro.props;
 const IMG_S = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85';
@@ -61,32 +62,7 @@ const channels = d.channels || [];
   <div class="max-w-[1440px] mx-auto cq">
     <div class="px-5 sm:px-8 lg:px-12"><Badge num="3" label="Кейсы с цифрами из кабинета Авито" border="border-gray-300" /></div>
     <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] mb-10 sm:mb-14 lg:mb-16">Наши проекты</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
-      {featured.map((c, i) => (
-        <a href={withBase(c.url)} class="block">
-          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] bg-[#3a3a3a]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white isolate`}>
-            {previewFor(c.url) && <img src={withBase(previewFor(c.url).file)} alt={previewFor(c.url).alt || c.case.niche} class="absolute inset-0 -z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="1200" height="800" />}
-            <span class="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/20" aria-hidden="true"></span>
-            <span class="text-[13px] opacity-90">{c.case.scope}</span>
-            <div>
-              <p class="text-[clamp(2.6rem,7vw,5.5rem)] font-medium tracking-[-0.04em] leading-none tabular-nums">{c.case.contacts}</p>
-              <p class="mt-2 text-[15px] opacity-90">обращений за месяц · {c.case.contact_price} за обращение</p>
-            </div>
-            <span class={`absolute bottom-4 left-4 h-9 w-9 group-hover:w-[168px] rounded-full ${i === 0 ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} flex items-center overflow-hidden transition-all duration-300 ease-in-out`}>
-              <span class="flex-none w-9 h-9 grid place-items-center"><svg class="-rotate-45 group-hover:rotate-0 transition-transform duration-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-              <span class="text-[13px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Смотреть кейс</span>
-            </span>
-          </div>
-          <p class="text-[13px] sm:text-[14px] text-gray-600 mt-4 leading-relaxed">{c.case.deltas || c.lede}</p>
-          <p class="text-[14px] sm:text-[15px] font-semibold text-gray-900 mt-1">{c.case.niche}</p>
-        </a>
-      ))}
-    </div>
-    {rest.length > 0 && (
-      <div class="case-grid px-5 sm:px-8 lg:px-12 mt-8" data-count={rest.length}>
-        {rest.map((c) => <CaseCard c={c} white />)}
-      </div>
-    )}
+    <div class="px-5 sm:px-8 lg:px-12"><CaseMosaic limit={7} id="home-cases" /></div>
     <div class="px-5 sm:px-8 lg:px-12 mt-10"><RollButton href="/kejsy/" label="Все кейсы" variant="dark" /></div>
   </div>
 </section>
