@@ -62,6 +62,7 @@ images:
   - { slot: hero, query: "developer monitoring website dashboard on laptop screen", alt: "Специалист проверяет состояние сайта на экране ноутбука" }
   - { slot: inline-1, query: "server backup data security icon on screen closeup", alt: "Резервное копирование и защита данных сайта" }
   - { slot: inline-2, query: "analytics dashboard showing uptime and traffic graph", alt: "Панель мониторинга доступности и трафика сайта" }
+  - { slot: inline-3, query: "it support technician monitoring screens", alt: "Специалист следит за работой сайта на мониторах" }
 ---
 Сайт, который уже запущен и работает, нуждается не в разовой правке и не в пересборке, а в постоянном внимании: кто-то должен следить, что он доступен, безопасен и виден в поиске. Без этого со временем накапливаются мелкие проблемы: неустановленные обновления, забытые резервные копии, страницы, которые незаметно выпали из индекса.
 

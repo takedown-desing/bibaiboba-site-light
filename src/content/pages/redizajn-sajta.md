@@ -59,6 +59,8 @@ related:
 images:
   - { slot: hero, query: "before after website redesign mockup on screen", alt: "Сравнение старого и нового макета сайта на экране" }
   - { slot: inline-1, query: "designer presenting website prototype on tablet to client", alt: "Дизайнер показывает прототип нового сайта на планшете" }
+  - { slot: inline-2, query: "old computer monitor vintage desk", alt: "Старый монитор как образ устаревшего сайта" }
+  - { slot: inline-3, query: "modern website design on large monitor", alt: "Современный дизайн сайта на большом мониторе" }
 ---
 Если сайт работает годами без изменений, рано или поздно он начинает мешать бизнесу, а не помогать ему: выглядит неубедительно рядом с конкурентами, плохо открывается с телефона или просто не успевает за тем, как изменилась компания. Редизайн сайта решает эту проблему не косметической правкой, а пересборкой сайта под текущую задачу бизнеса.
 

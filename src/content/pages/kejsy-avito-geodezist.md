@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "surveyor with tripod total station outdoors", alt: "Геодезист работает с тахеометром на местности" }
   - { slot: inline-1, query: "small town street aerial view", alt: "Небольшой город, где работает геодезист" }
+  - { slot: inline-2, query: "land surveyor measuring field equipment", alt: "Геодезические измерения на участке" }
 ---
 Узкие B2B-услуги в небольших городах часто сомневаются, стоит ли вообще заходить на Авито: аудитория кажется слишком маленькой. Этот кейс геодезиста показывает, что при точной настройке результат может прийти уже за первую неделю.
 

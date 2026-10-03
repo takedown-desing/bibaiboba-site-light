@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "website code review laptop screen seo checklist", alt: "Специалист проверяет сайт по чек-листу SEO-оптимизации" }
   - { slot: inline-1, query: "developer editing website meta tags code editor", alt: "Правка метатегов и кода страницы сайта" }
   - { slot: inline-2, query: "seo specialist analyzing website performance report", alt: "Анализ отчёта по результатам проверки сайта" }
+  - { slot: inline-3, query: "html code on screen closeup", alt: "Код страницы на экране крупным планом" }
 ---
 
 SEO-оптимизация сайта: разовая работа, которую заказывают, когда на сайте накопились конкретные проблемы: от неточных заголовков страниц до медленной загрузки. В отличие от постоянного продвижения, у оптимизации есть понятный конец: список внедрённых правок по сайту.

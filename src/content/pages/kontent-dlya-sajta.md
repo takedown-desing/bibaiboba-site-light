@@ -64,6 +64,7 @@ images:
   - { slot: hero, query: "writer typing laptop notebook research desk", alt: "Специалист пишет текст для сайта за ноутбуком" }
   - { slot: inline-1, query: "research notes sticky notes content planning desk", alt: "Этапы подготовки текста: исследование и структура на столе" }
   - { slot: inline-2, query: "editor reviewing printed text with pen close up", alt: "Редактор проверяет и вычитывает готовый текст" }
+  - { slot: inline-3, query: "person reading article on tablet", alt: "Читатель изучает статью на планшете" }
 ---
 
 SEO-текст давно перестал быть текстом с нужным количеством ключевых слов на тысячу знаков. Сегодня поисковые системы оценивают, помогает ли текст читателю, а не то, сколько раз в нём встретилась фраза из запроса.

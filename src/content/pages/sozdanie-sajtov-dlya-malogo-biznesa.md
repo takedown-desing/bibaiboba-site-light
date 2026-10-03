@@ -64,6 +64,8 @@ related:
 images:
   - { slot: hero, query: "small business owner working on laptop in shop", alt: "Владелец малого бизнеса работает за ноутбуком в своём магазине" }
   - { slot: inline-1, query: "entrepreneur comparing website layouts on tablet screen", alt: "Предприниматель сравнивает варианты макетов сайта на планшете" }
+  - { slot: inline-2, query: "small cafe owner with tablet counter", alt: "Владелец небольшого кафе с планшетом" }
+  - { slot: inline-3, query: "local shop owner smartphone customer order", alt: "Владелец магазина принимает заказ со смартфона" }
 ---
 Малому бизнесу и ИП редко нужен большой сайт с десятками страниц: нужен понятный формат, который реально запустить без собственного маркетингового отдела и который начнёт приносить заявки, а не просто существовать в интернете. Создание сайта для малого бизнеса начинается не с дизайна, а с вопроса, какой формат подходит именно вашей ситуации.
 

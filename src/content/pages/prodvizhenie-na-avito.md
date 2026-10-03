@@ -64,6 +64,7 @@ images:
   - { slot: hero, query: "small business owner smartphone online marketplace listing", alt: "Предприниматель отвечает на заявки с телефона" }
   - { slot: inline-1, query: "laptop product photo listing editing workspace", alt: "Подготовка фото и текста объявления на ноутбуке" }
   - { slot: inline-2, query: "delivery warehouse boxes tires small business growth", alt: "Склад товара растущего бизнеса, который продвигается на нескольких направлениях" }
+  - { slot: inline-3, query: "customer calling service on phone smiling", alt: "Клиент звонит по объявлению" }
 ---
 Авито даёт обращения быстрее, чем поиск и нейросети, но только если аккаунт ведут регулярно, а не разово разместили объявление и забыли о нём. Продвижение на Авито: это постоянная работа с объявлениями, текстом, инфографикой и бюджетом, а не одна оплаченная услуга поднятия.
 

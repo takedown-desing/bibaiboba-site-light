@@ -64,6 +64,7 @@ images:
   - { slot: hero, query: "freelance specialist working on laptop with analytics charts", alt: "Частный SEO-специалист работает с аналитикой сайта за ноутбуком" }
   - { slot: inline-1, query: "person analyzing website data on multiple screens", alt: "Анализ показателей сайта на нескольких экранах в процессе продвижения" }
   - { slot: inline-2, query: "magnifying glass over website checklist document", alt: "Проверка критериев выбора специалиста по чек-листу" }
+  - { slot: inline-3, query: "freelancer working laptop cafe notes", alt: "Специалист работает за ноутбуком с заметками" }
 ---
 
 Когда ищут частного SEO-специалиста, обычно хотят не компанию с менеджерами, а конкретного человека, который сам разберётся в сайте, сам примет решения и сам отвечает за результат. Я работаю именно так: веду проект от первого аудита до ежемесячного отчёта лично, без передачи задач между разными сотрудниками.

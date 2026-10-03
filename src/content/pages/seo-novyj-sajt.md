@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "laptop screen showing new website launch analytics", alt: "Запуск нового сайта и первая проверка показателей" }
   - { slot: inline-1, query: "developer checking website sitemap and search console on screen", alt: "Проверка карты сайта и статуса индексации на экране" }
   - { slot: inline-2, query: "before and after website redesign comparison on screen", alt: "Сравнение сайта до и после редизайна на экране" }
+  - { slot: inline-3, query: "startup launch team celebrating laptop", alt: "Команда запускает новый проект" }
 ---
 
 Новому сайту нужен не общий план продвижения, а отдельный технический старт: у него нет истории в индексе, ссылочной массы и поведенческой статистики. То же самое происходит, если сайт недавно прошёл редизайн или переехал на новый адрес: поисковику нужно заново пройти его страницы.

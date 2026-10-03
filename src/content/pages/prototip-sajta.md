@@ -61,6 +61,8 @@ related:
 images:
   - { slot: hero, query: "website wireframe sketch on tablet screen", alt: "Прототип сайта: схема структуры и блоков страницы" }
   - { slot: inline-1, query: "wireframe and color mockup comparison on desk", alt: "Прототип сайта рядом с дизайн-макетом" }
+  - { slot: inline-2, query: "paper sketches website wireframe pencil", alt: "Эскизы страниц сайта карандашом на бумаге" }
+  - { slot: inline-3, query: "ux designer sticky notes user flow wall", alt: "Схема пути пользователя на стикерах" }
 ---
 Прежде чем у сайта появляется дизайн, у него должна появиться структура: какие разделы будут на странице, в каком порядке и что в них написано. Этот промежуточный этап называют прототипом сайта, и именно из-за того, что он выглядит просто и небросается в глаза, его легко недооценить.
 

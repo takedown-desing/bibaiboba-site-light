@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "stack of used car tires wheels warehouse", alt: "Склад шин и дисков для выкупа" }
   - { slot: inline-1, query: "car rims tires inspection", alt: "Осмотр шин и дисков перед выкупом" }
+  - { slot: inline-2, query: "alloy wheels rims stacked", alt: "Литые диски, сложенные стопкой" }
 ---
 Компания, которая занимается выкупом автомобильных шин и дисков, уже работала на рынке, но на Авито продвижение велось формально. За месяц SEO-настройки объявлений и смена подхода к поднятиям увеличили просмотры почти в 20 раз.
 

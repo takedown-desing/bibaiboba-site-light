@@ -61,6 +61,7 @@ images:
   - { slot: hero, query: "person using ai chatbot smartphone conversation", alt: "Пользователь получает ответ от нейросети на смартфоне" }
   - { slot: inline-1, query: "data network nodes connection analysis", alt: "Алгоритм анализирует источники перед формированием ответа" }
   - { slot: inline-2, query: "content writer working laptop structured text", alt: "Подготовка контента сайта для продвижения в нейросетях" }
+  - { slot: inline-3, query: "person asking question chatbot on smartphone", alt: "Человек задаёт вопрос нейросети со смартфона" }
 ---
 
 Пользователь всё чаще получает готовый ответ прямо в диалоге с нейросетью, без перехода на сайт и без сравнения десятка ссылок в выдаче. Если материалы бизнеса не читаются алгоритмом как надёжный источник, компания остаётся незамеченной в таком ответе, даже если у неё хорошие позиции в обычном поиске.

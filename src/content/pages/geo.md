@@ -64,6 +64,7 @@ images:
   - { slot: hero, query: "artificial intelligence network data search concept", alt: "Нейросеть анализирует данные для поискового ответа" }
   - { slot: inline-1, query: "digital data analysis screen search algorithm", alt: "Алгоритм анализирует источники для ответа нейросети" }
   - { slot: inline-2, query: "web developer working on laptop code structure", alt: "Техническая подготовка сайта к GEO-оптимизации" }
+  - { slot: inline-3, query: "abstract neural network data visualization blue", alt: "Визуализация связей данных в нейросети" }
 ---
 
 Нейросети и AI-функции поиска всё чаще отвечают на запрос пользователя сразу, без перехода на сайт, и ссылаются только на несколько источников. Если сайт не читается алгоритмом как надёжный источник, бизнес остаётся незаметным в таком ответе, даже если у него хорошие позиции в обычной выдаче.

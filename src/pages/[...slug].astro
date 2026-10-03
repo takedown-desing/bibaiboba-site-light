@@ -46,53 +46,53 @@ const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlig
   {d.type === 'home' ? (
     <HomeSections d={d}><Content /></HomeSections>
   ) : (
-    <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-20">
-      <div class={`grid gap-12 ${toc.length > 2 && !isForm ? 'lg:grid-cols-[minmax(0,760px)_300px] lg:justify-between' : ''}`}>
-        <article class="prose-bb min-w-0">
-          <Content />
-          {img['inline-1'] && (
-            <figure class="!mt-10">
-              <img src={withBase(img['inline-1'].file)} alt={img['inline-1'].alt} width={img['inline-1'].width} height={img['inline-1'].height} loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover rounded-2xl" />
-            </figure>
-          )}
-          {d.type === 'hub' && allCases.length > 0 && (
-            <div class="case-grid !mt-10">
-              {allCases.map((c) => (
-                <a class="case-card" href={withBase(c.url)}>
-                  <span class="case-niche">{c.case?.niche}</span>
-                  <span class="case-metric"><b>{c.case?.contacts}</b> обращений за месяц</span>
-                  <span class="case-metric"><b>{c.case?.contact_price}</b> цена обращения</span>
-                  {c.case?.deltas && <span class="case-delta">{c.case.deltas}</span>}
-                  <span class="case-more">Читать кейс</span>
-                </a>
-              ))}
-            </div>
-          )}
-        </article>
-        {isForm ? (
-          <div id="form" class="lg:max-w-[560px] scroll-mt-6"><LeadForm kind={formKind} title={d.form_title || (formKind === 'audit' ? 'Заявка на экспресс-аудит' : formKind === 'brief' ? 'Бриф на проект' : 'Написать нам')} /></div>
-        ) : toc.length > 2 && (
-          <aside class="hidden lg:block">
-            <div class="sticky top-6 grid gap-4">
-              <nav aria-label="Содержание страницы" class="bg-[#F5F5F5] rounded-2xl p-5">
-                <p class="text-[12px] font-semibold uppercase tracking-[.06em] text-gray-600 mb-3">На этой странице</p>
-                <ol class="grid gap-2 text-[14px]">
-                  {toc.map((h) => <li><a class="text-gray-700 hover:text-[#F26522] transition-colors leading-snug block" href={`#${h.slug}`}>{h.text}</a></li>)}
-                  {d.faq?.length > 0 && <li><a class="text-gray-700 hover:text-[#F26522] transition-colors" href="#faq-title">Частые вопросы</a></li>}
-                </ol>
-              </nav>
-              <div class="bg-gray-900 text-white rounded-2xl p-5 grid gap-4">
-                <p class="text-[16px] font-medium leading-snug">Проверим ваш сайт или профиль Авито бесплатно</p>
-                <RollButton href="/audit-besplatno/" label="Получить аудит" size="sm" class="justify-self-start" />
+    <div class="bg-[#F5F5F5]">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-14">
+        <div class={`grid gap-6 lg:gap-8 ${isForm ? 'xl:grid-cols-[minmax(0,1fr)_minmax(0,520px)] items-start' : toc.length > 2 ? 'xl:grid-cols-[minmax(0,1fr)_280px] items-start' : ''}`}>
+          <div class="grid gap-5 sm:gap-6 min-w-0">
+            <article class="prose-bb flow">
+              <Content />
+            </article>
+            {d.type === 'hub' && allCases.length > 0 && (
+              <section class="sec">
+                <div class="sec-head"><span class="sec-num" aria-hidden="true">★</span><h2 id="vse-kejsy">Все кейсы</h2></div>
+                <div class="case-grid cards" data-count={allCases.length}>
+                  {allCases.map((c) => (
+                    <a class="case-card" href={withBase(c.url)}>
+                      <span class="case-niche">{c.case?.niche}</span>
+                      <span class="case-metric"><b>{c.case?.contacts}</b> обращений за месяц</span>
+                      <span class="case-metric"><b>{c.case?.contact_price}</b> цена обращения</span>
+                      {c.case?.deltas && <span class="case-delta">{c.case.deltas}</span>}
+                      <span class="case-more">Читать кейс</span>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+            {!isForm && d.type !== 'legal' && <div class="sec sec-tight"><AuthorBox author={d.author} date={d.date_modified} /></div>}
+            {d.faq?.length > 0 && <div class="sec"><Faq items={d.faq} /></div>}
+            {d.related?.length > 0 && <div class="sec"><Related items={d.related} /></div>}
+          </div>
+          {isForm ? (
+            <div id="form" class="xl:sticky xl:top-6 scroll-mt-6"><LeadForm kind={formKind} title={d.form_title || (formKind === 'audit' ? 'Заявка на экспресс-аудит' : formKind === 'brief' ? 'Бриф на проект' : 'Написать нам')} /></div>
+          ) : toc.length > 2 && (
+            <aside class="hidden xl:block sticky top-6">
+              <div class="grid gap-4">
+                <nav aria-label="Содержание страницы" class="bg-white rounded-[28px] p-6">
+                  <p class="text-[12px] font-semibold uppercase tracking-[.06em] text-gray-600 mb-3">На этой странице</p>
+                  <ol class="grid gap-2.5 text-[14px] toc-list">
+                    {toc.map((h, i) => <li><a class="toc-link" href={`#${h.slug}`}><span>{String(i + 1).padStart(2, '0')}</span>{h.text}</a></li>)}
+                    {d.faq?.length > 0 && <li><a class="toc-link" href="#faq-title"><span>?</span>Частые вопросы</a></li>}
+                  </ol>
+                </nav>
+                <div class="bg-gray-900 text-white rounded-[28px] p-6 grid gap-4">
+                  <p class="text-[16px] font-medium leading-snug">Проверим ваш сайт или профиль Авито бесплатно</p>
+                  <RollButton href="/audit-besplatno/" label="Получить аудит" size="sm" class="justify-self-start" />
+                </div>
               </div>
-            </div>
-          </aside>
-        )}
-      </div>
-      <div class="grid gap-16 mt-16 max-w-[1100px]">
-        {d.type !== 'legal' && <AuthorBox author={d.author} date={d.date_modified} />}
-        <Faq items={d.faq || []} />
-        <Related items={d.related || []} />
+            </aside>
+          )}
+        </div>
       </div>
     </div>
   )}

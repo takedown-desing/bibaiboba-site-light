@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "laptop with website analytics dashboard and growth chart", alt: "Ноутбук с аналитикой сайта и графиком роста трафика" }
   - { slot: inline-1, query: "designer and developer collaborating on website wireframe", alt: "Дизайнер и разработчик обсуждают прототип сайта" }
   - { slot: inline-2, query: "marketing report dashboard with multiple channel metrics", alt: "Отчёт с метриками по нескольким каналам продвижения" }
+  - { slot: inline-3, query: "marketing growth chart presentation laptop", alt: "График роста заявок на экране" }
 ---
 Заказывая сайт, бизнес обычно решает одну задачу, а продвижение откладывает на потом: сначала разработка, потом поиск подрядчика для SEO, потом сверка того, что один сделал, с тем, что нужно другому. Создание сайта с продвижением убирает этот разрыв: сайт с самого начала проектируют так, чтобы его можно было продвигать, а продвижение ведёт тот же исполнитель, что и разработку.
 

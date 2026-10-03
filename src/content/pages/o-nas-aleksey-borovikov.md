@@ -49,6 +49,7 @@ related:
 images:
   - { slot: hero, query: "seo specialist analyzing website analytics dashboard laptop", alt: "Алексей Боровиков анализирует показатели сайта в SEO-отчёте" }
   - { slot: inline-1, query: "developer writing code website screen", alt: "Работа с кодом и вёрсткой сайта" }
+  - { slot: inline-2, query: "laptop analytics charts home office desk", alt: "Рабочее место SEO-специалиста с аналитикой на экране" }
 ---
 В SEO с октября 2018 года, без перерывов. За это время прошёл путь от специалиста в агентстве до человека, который ведёт проект целиком: от первого исследования ниши до вёрстки и деплоя готового сайта.
 

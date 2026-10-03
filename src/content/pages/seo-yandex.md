@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "analyst checking website search ranking report on laptop", alt: "Специалист проверяет показатели сайта в поисковой выдаче" }
   - { slot: inline-1, query: "website quality metrics dashboard with charts", alt: "Панель показателей качества сайта с графиками" }
   - { slot: inline-2, query: "digital marketing specialist planning workflow steps on screen", alt: "Планирование этапов продвижения сайта на экране" }
+  - { slot: inline-3, query: "person searching on laptop at desk evening", alt: "Человек ищет услугу в поисковике за ноутбуком" }
 ---
 
 Продвижение сайта в Яндексе: это SEO-продвижение именно в этой поисковой системе, со своими метриками и правилами. Речь о поисковой выдаче Яндекса, а не о карточке организации в Яндекс Картах и не о платной рекламе в Яндекс Директе: эти инструменты мы не используем, работаем только с органическим поиском.

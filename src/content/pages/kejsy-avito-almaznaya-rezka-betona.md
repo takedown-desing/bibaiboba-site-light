@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "diamond blade concrete cutting construction site", alt: "Алмазная резка бетона на строительном объекте" }
   - { slot: inline-1, query: "core drilling concrete wall tool", alt: "Бурение отверстий в бетонной стене алмазной коронкой" }
+  - { slot: inline-2, query: "construction worker drilling concrete wall", alt: "Рабочий бурит отверстие в бетонной стене" }
 ---
 Частный мастер по алмазной резке бетона и бурению работал в одиночку и получал заявки с Авито нерегулярно: примерно раз в 4–10 дней. Основной поток шёл через подрядные фирмы и сторонние источники, а площадку использовали скорее по инерции, чем как рабочий канал.
 

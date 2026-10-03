@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "locksmith tools door lock repair", alt: "Мастер вскрывает дверной замок" }
   - { slot: inline-1, query: "russia map multiple cities pins", alt: "Карта городов запуска продвижения вскрытия замков" }
+  - { slot: inline-2, query: "door lock key cylinder macro", alt: "Цилиндр дверного замка крупным планом" }
 ---
 Вскрытие и ремонт замков: одна из самых конкурентных услуг на Авито, потому что порог входа низкий, а спрос срочный почти в любом городе. Разбираем кейс продвижения сразу в 35 городах России.
 

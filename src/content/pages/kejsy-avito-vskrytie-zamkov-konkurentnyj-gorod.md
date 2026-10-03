@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "locksmith tools door lock closeup", alt: "Инструменты мастера по вскрытию замков" }
   - { slot: inline-1, query: "busy city street many shopfronts", alt: "Городская улица с плотной конкуренцией услуг" }
+  - { slot: inline-2, query: "city apartment building entrance doors", alt: "Входные двери жилого дома в городе" }
 ---
 Вскрытие замков в одном городе с высокой конкуренцией требует другого подхода, чем запуск сразу в десятках городов: здесь нет возможности распределить бюджет по гео, и всё решает точечная работа с одним аккаунтом.
 

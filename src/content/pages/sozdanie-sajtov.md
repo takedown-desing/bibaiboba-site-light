@@ -63,6 +63,8 @@ related:
 images:
   - { slot: hero, query: "web designer sketching website layout on tablet", alt: "Разработчик продумывает структуру сайта на планшете" }
   - { slot: inline-1, query: "team planning website wireframe on whiteboard", alt: "Команда обсуждает прототип сайта у доски" }
+  - { slot: inline-2, query: "web design team working on website layout", alt: "Команда работает над макетом сайта" }
+  - { slot: inline-3, query: "website launch laptop coffee morning", alt: "Готовый сайт на экране ноутбука" }
 ---
 Владельцу бизнеса нужен не «сайт как файл», а работающий инструмент: страница, которая объясняет суть предложения, вызывает доверие и ведёт посетителя к заявке. Создание сайта под ключ закрывает именно эту задачу: вы описываете бизнес и цель, а дальше всю цепочку работ, от структуры до запуска, берёт на себя один исполнитель.
 

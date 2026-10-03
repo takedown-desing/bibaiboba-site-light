@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "mini crane machine construction site", alt: "Мини-кран на строительной площадке" }
   - { slot: inline-1, query: "crane operator control panel", alt: "Оператор управляет мини-краном" }
+  - { slot: inline-2, query: "small crane lifting materials building", alt: "Мини-кран поднимает материалы на объекте" }
 ---
 Продажа спецтехники на Авито часто упирается в потолок показов по обычным поисковым запросам. В этом кейсе показываем, как для продажи мини-кранов нашли дополнительный источник просмотров: рекомендации самой площадки.
 

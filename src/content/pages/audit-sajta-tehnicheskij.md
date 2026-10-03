@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "website code audit laptop screen developer", alt: "Техническая проверка кода и структуры сайта" }
   - { slot: inline-1, query: "seo analytics dashboard screen data charts", alt: "Анализ показателей индексации сайта на экране" }
   - { slot: inline-2, query: "developer reviewing website performance report", alt: "Специалист разбирает отчёт по технической диагностике сайта" }
+  - { slot: inline-3, query: "server room network cables data center", alt: "Серверная инфраструктура, от которой зависит скорость сайта" }
 ---
 
 Технический аудит сайта отвечает на один вопрос: что в коде, настройках и на сервере мешает сайту попадать в индекс и быстро открываться у посетителя. Это не оценка контента и не разбор удобства использования, а проверка технической основы, на которой всё остальное либо работает, либо нет.

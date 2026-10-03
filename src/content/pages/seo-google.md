@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "seo specialist analyzing website performance report on computer", alt: "Специалист анализирует отчёт о производительности сайта в поиске" }
   - { slot: inline-1, query: "website speed performance metrics chart on screen", alt: "График показателей скорости и стабильности сайта на экране" }
   - { slot: inline-2, query: "person using ai search assistant on laptop", alt: "Пользователь работает с ИИ-функцией поиска на ноутбуке" }
+  - { slot: inline-3, query: "google search on laptop screen keyboard", alt: "Поисковый запрос на экране ноутбука" }
 ---
 
 Продвижение сайта в Google: это SEO-продвижение именно в этой поисковой системе, со своим набором метрик и правил. Речь о поисковой выдаче Google, не о контекстной рекламе Google Ads: такую услугу мы не оказываем, работаем только с органическим поиском.

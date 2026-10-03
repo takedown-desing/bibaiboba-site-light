@@ -7,7 +7,7 @@ interface Props { d: any }
 const { d } = Astro.props;
 const cta = d.hero_cta?.primary || { href: '/audit-besplatno/', label: 'Получить аудит' };
 ---
-<section class="relative min-h-[100svh] hero-fallback overflow-hidden flex flex-col">
+<section class="relative min-h-[100svh] hero-fallback overflow-x-clip flex flex-col">
   <div class="absolute inset-0 z-10 pointer-events-none" aria-hidden="true"><ShaderBg client:only="react" /></div>
   <div class="relative z-20"><Nav current="/" /></div>
   <div class="flex-1"></div>

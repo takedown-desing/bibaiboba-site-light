@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "digital map pins network connecting across country", alt: "Карта с точками продвижения в разных регионах страны" }
   - { slot: inline-1, query: "content strategy diagram on whiteboard with sticky notes", alt: "Схема структуры контента на доске без повторяющихся блоков" }
   - { slot: inline-2, query: "specialist analyzing multiple website pages on screen", alt: "Специалист анализирует несколько страниц сайта на экране" }
+  - { slot: inline-3, query: "road trip highway between cities aerial", alt: "Трасса между городами с высоты" }
 ---
 
 Продвижение сайта в регионах: это SEO-продвижение сайта сразу в нескольких географических регионах одной страны, а не в одном городе. Речь именно о поисковой выдаче Яндекса и Google: мы не занимаемся платной рекламой в Яндекс Директе и не продвигаем карточки организаций в Яндекс Картах, работаем только с органическим поиском.

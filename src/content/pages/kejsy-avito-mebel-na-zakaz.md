@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "custom furniture workshop showroom", alt: "Цех по производству мебели на заказ с шоурумом" }
   - { slot: inline-1, query: "wood furniture craftsman workshop detail", alt: "Изготовление мебели на заказ в цехе" }
+  - { slot: inline-2, query: "modern kitchen furniture showroom interior", alt: "Шоурум с образцами кухонной мебели" }
 ---
 Мебельное производство с собственным шоурумом размещало объявления на Авито самостоятельно и пробовало стандартные услуги продвижения, но заявок это не прибавляло. За месяц отказ от массового постинга в пользу точной упаковки объявлений изменил картину.
 

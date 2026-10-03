@@ -64,6 +64,8 @@ related:
 images:
   - { slot: hero, query: "business team reviewing corporate website homepage on laptop", alt: "Команда обсуждает структуру корпоративного сайта на ноутбуке" }
   - { slot: inline-1, query: "diverse team meeting in modern office discussing company departments", alt: "Команда компании с несколькими направлениями на совещании" }
+  - { slot: inline-2, query: "corporate office team meeting presentation screen", alt: "Встреча команды компании у экрана с презентацией" }
+  - { slot: inline-3, query: "company website on desktop monitor office", alt: "Корпоративный сайт на мониторе в офисе" }
 ---
 Компании с несколькими направлениями, услугами или проектами одной страницы обычно мало: нужно показать каждое направление отдельно, представить команду и дать понятную структуру контактов. Разработка корпоративного сайта закрывает именно эту задачу: мы проектируем многостраничный сайт, который представляет бизнес целиком, а не одну услугу или одно предложение.
 

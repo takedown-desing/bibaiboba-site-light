@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "home renovation construction tools apartment", alt: "Ремонт квартиры: инструменты на объекте" }
   - { slot: inline-1, query: "russia cities map network connections", alt: "Карта городов запуска продвижения ремонта" }
+  - { slot: inline-2, query: "painter renovating apartment wall roller", alt: "Мастер красит стену при ремонте квартиры" }
 ---
 Ремонт квартир, домов и офисов: ниша с высокой конкуренцией в поиске и среди рекомендаций, где Авито часто остаётся недооценённым каналом. Разбираем кейс запуска продвижения сразу в 20 городах России.
 

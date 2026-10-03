@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "website audit checklist laptop screen", alt: "Проверка сайта на готовность к ответам нейросетей" }
   - { slot: inline-1, query: "data crawler bot scanning website code", alt: "Бот анализирует структуру и код страницы" }
   - { slot: inline-2, query: "seo specialist reviewing website report on screen", alt: "Специалист разбирает отчёт по результатам аудита" }
+  - { slot: inline-3, query: "checklist clipboard pen analysis report desk", alt: "Чек-лист проверки сайта на столе" }
 ---
 
 Аудит AI-готовности сайта отвечает на простой вопрос: может ли сайт стать источником для ответа нейросети, или алгоритм пройдёт мимо него, даже если у сайта хорошие позиции в обычной выдаче. Нейросети и AI-функции поиска всё чаще отвечают пользователю готовым текстом и ссылаются только на несколько источников.

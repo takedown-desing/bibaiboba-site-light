@@ -49,6 +49,7 @@ related:
 images:
   - { slot: hero, query: "online marketplace seller photographing product smartphone", alt: "Валентин Баранов готовит объявление для размещения на Авито" }
   - { slot: inline-1, query: "person reviewing sales statistics chart screen", alt: "Анализ статистики просмотров и контактов по объявлениям" }
+  - { slot: inline-2, query: "smartphone marketplace listing statistics hand", alt: "Статистика объявлений на экране смартфона" }
 ---
 С Авито работаю с 2018 года, почти восемь лет без перерывов. За это время собралось больше 200 реализованных проектов и больше 80 опубликованных кейсов с реальными цифрами из кабинета Авито.
 

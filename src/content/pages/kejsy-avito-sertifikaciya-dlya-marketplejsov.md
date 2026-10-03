@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "certificate documents stamp office desk", alt: "Документы сертификации на столе" }
   - { slot: inline-1, query: "warehouse boxes marketplace products", alt: "Товары на складе перед продажей на маркетплейсе" }
+  - { slot: inline-2, query: "product boxes barcode labels packaging", alt: "Упаковка товаров с маркировкой перед отправкой" }
 ---
 Сертификация продукции для продавцов маркетплейсов: узкая B2B-услуга, где клиенты ищут исполнителя не импульсивно, а по конкретной задаче. Этот кейс показывает, как такая услуга продвигается на Авито почти два года и продолжает расти без увеличения бюджета.
 

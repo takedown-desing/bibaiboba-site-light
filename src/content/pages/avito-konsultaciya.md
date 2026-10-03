@@ -62,6 +62,8 @@ related:
 images:
   - { slot: hero, query: "business consultant video call laptop notes consultation", alt: "Онлайн-консультация специалиста с предпринимателем за ноутбуком" }
   - { slot: inline-1, query: "laptop screen analytics charts marketplace dashboard", alt: "Разбор статистики аккаунта на экране ноутбука" }
+  - { slot: inline-2, query: "smartphone marketplace app listing photos hands", alt: "Объявление на торговой площадке в смартфоне" }
+  - { slot: inline-3, query: "notebook plan checklist coffee desk", alt: "План работ после консультации в блокноте" }
 ---
 Когда ищут «консультацию по Авито», часто имеют в виду два разных запроса: обращение в техподдержку самой площадки или разговор с независимым специалистом, который разберёт конкретную ситуацию. Это страница про второе.
 

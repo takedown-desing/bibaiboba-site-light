@@ -63,6 +63,7 @@ images:
   - { slot: hero, query: "online store warehouse laptop", alt: "Управление каталогом интернет-магазина за ноутбуком" }
   - { slot: inline-1, query: "ecommerce website category page filters screen", alt: "Страница категории интернет-магазина с фильтрами" }
   - { slot: inline-2, query: "laptop screen online shop product page", alt: "Карточка товара интернет-магазина на экране" }
+  - { slot: inline-3, query: "online order parcel delivery boxes", alt: "Посылки с заказами интернет-магазина" }
 ---
 
 Интернет-магазину нужен поток из поиска на категории и карточки, а не только на главную страницу. SEO-продвижение интернет-магазина строится от структуры каталога: от того, как он связан с реальным спросом, а не с внутренней логикой склада.

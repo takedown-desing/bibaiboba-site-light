@@ -17,24 +17,16 @@ const channels = d.channels || [];
 <section class="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden">
   <div class="max-w-[1440px] mx-auto">
     <div class="px-5 sm:px-8 lg:px-12"><Badge num="1" label="Знакомьтесь: Биба и Боба" /></div>
-    <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-[26ch]">{d.about_title || 'Два практика с 2018 года: поиск и сайты, Авито. Один подрядчик на три канала заявок.'}</h2>
-    <div class="lg:hidden px-5 sm:px-8">
-      <p class="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">{d.about_text || d.lede}</p>
-      <RollButton href="/o-nas/" label="Подробнее о нас" />
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
-        <img src={IMG_S} alt="Работа над проектом за ноутбуком" class="sm:w-[45%] aspect-[438/346] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="438" height="346" />
-        <img src={IMG_L} alt="Планирование работ по проекту у доски" class="sm:w-[55%] aspect-[900/600] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="900" height="600" />
+    <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-10 sm:mb-14 lg:mb-20 max-w-[26ch]">{d.about_title || 'Два практика с 2018 года: поиск и сайты, Авито. Один подрядчик на три канала заявок.'}</h2>
+    <div class="px-5 sm:px-8 lg:px-12 grid gap-8 lg:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-end">
+      <div class="grid gap-6 content-start">
+        <p class="text-[16px] sm:text-[18px] lg:text-[20px] leading-[1.6] font-medium text-gray-900 max-w-[46ch]">{d.about_text || d.lede}</p>
+        <RollButton href="/o-nas/" label="Подробнее о нас" class="justify-self-start" />
       </div>
-    </div>
-    <div class="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 px-12">
-      <img src={IMG_S} alt="Работа над проектом за ноутбуком" class="self-end w-full aspect-[438/346] object-cover rounded-2xl" loading="lazy" decoding="async" width="438" height="346" />
-      <div class="self-start flex justify-end">
-        <div>
-          <p class="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 max-w-[30ch] mb-8">{d.about_text || d.lede}</p>
-          <RollButton href="/o-nas/" label="Подробнее о нас" />
-        </div>
+      <div class="grid grid-cols-[minmax(0,4fr)_minmax(0,6fr)] gap-4 sm:gap-5 items-end">
+        <img src={IMG_S} alt="Работа над проектом за ноутбуком" class="w-full aspect-[438/346] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="438" height="346" />
+        <img src={IMG_L} alt="Планирование работ по проекту у доски" class="w-full aspect-[3/2] object-cover rounded-xl sm:rounded-2xl" loading="lazy" decoding="async" width="900" height="600" />
       </div>
-      <img src={IMG_L} alt="Планирование работ по проекту у доски" class="self-end w-full aspect-[3/2] object-cover rounded-2xl" loading="lazy" decoding="async" width="900" height="600" />
     </div>
   </div>
 </section>
@@ -63,13 +55,13 @@ const channels = d.channels || [];
 )}
 
 <section class="bg-[#F5F5F5] pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
-  <div class="max-w-[1440px] mx-auto">
+  <div class="max-w-[1440px] mx-auto cq">
     <div class="px-5 sm:px-8 lg:px-12"><Badge num="3" label="Кейсы с цифрами из кабинета Авито" border="border-gray-300" /></div>
     <h2 class="px-5 sm:px-8 lg:px-12 text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] mb-10 sm:mb-14 lg:mb-16">Наши проекты</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
       {featured.map((c, i) => (
         <a href={withBase(c.url)} class="block">
-          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] md:aspect-square bg-[#6b6b6b]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white`}>
+          <div class={`relative ${i === 0 ? 'aspect-[329/246] bg-[#1a1d2e]' : 'aspect-[329/246] bg-[#6b6b6b]'} rounded-2xl overflow-hidden group cursor-pointer p-6 sm:p-8 flex flex-col justify-between text-white`}>
             <span class="text-[13px] opacity-80">{c.case.scope}</span>
             <div>
               <p class="text-[clamp(2.6rem,7vw,5.5rem)] font-medium tracking-[-0.04em] leading-none tabular-nums">{c.case.contacts}</p>
@@ -86,7 +78,7 @@ const channels = d.channels || [];
       ))}
     </div>
     {rest.length > 0 && (
-      <div class="case-grid px-5 sm:px-8 lg:px-12 mt-8">
+      <div class="case-grid px-5 sm:px-8 lg:px-12 mt-8" data-count={rest.length}>
         {rest.map((c) => (
           <a class="case-card !bg-white" href={withBase(c.url)}>
             <span class="case-niche">{c.case.niche}</span>
@@ -101,13 +93,12 @@ const channels = d.channels || [];
   </div>
 </section>
 
-<section class="bg-white py-16 sm:py-20 lg:py-28">
-  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
-    <Badge num="4" label="Чем мы занимаемся" />
-    <div class="prose-bb max-w-[820px]"><slot /></div>
+<section class="bg-[#F5F5F5] py-16 sm:py-20 lg:py-28 border-t border-gray-200">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+    <Badge num="4" label="Чем мы занимаемся" border="border-gray-300" />
+    <div class="grid gap-5 sm:gap-6">
+      <div class="prose-bb flow"><slot /></div>
+      <div class="sec"><Faq items={d.faq || []} /></div>
+    </div>
   </div>
-</section>
-
-<section class="bg-white pb-16 sm:pb-24">
-  <div class="max-w-[1100px] mx-auto px-5 sm:px-8 lg:px-12"><Faq items={d.faq || []} num={5} /></div>
 </section>

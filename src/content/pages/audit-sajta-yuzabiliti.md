@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "user testing website laptop screen usability", alt: "Проверка удобства использования сайта для посетителей" }
   - { slot: inline-1, query: "website wireframe form review desk", alt: "Разбор навигации и форм сайта при аудите" }
   - { slot: inline-2, query: "mobile and desktop website testing hands", alt: "Проверка сайта на мобильном и десктопе" }
+  - { slot: inline-3, query: "person shopping online smartphone checkout form", alt: "Покупатель заполняет форму заказа на смартфоне" }
 ---
 
 Посетитель решает, остаться на сайте или уйти, за несколько секунд. Если навигация запутанная, форма не отправляется с телефона или тексту не хватает контраста, даже хороший трафик из поиска не превращается в заявки.

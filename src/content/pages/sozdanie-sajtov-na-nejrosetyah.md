@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "laptop screen showing website wireframe and abstract network nodes", alt: "Ноутбук с макетом сайта и схемой нейросети на экране" }
   - { slot: inline-1, query: "team reviewing website draft on screen together", alt: "Команда проверяет черновик сайта на экране" }
   - { slot: inline-2, query: "clean modern website dashboard on laptop with code editor", alt: "Готовый сайт и редактор кода на экране ноутбука" }
+  - { slot: inline-3, query: "developer laptop ai code assistant screen", alt: "Разработчик работает с ИИ-ассистентом" }
 ---
 «ИИ для создания сайта» или «сайт через нейросеть» в последние пару лет значит слишком много разных вещей: от бесплатного онлайн-конструктора, который собирает черновик за один запрос, до услуги, где нейросети встроены в рабочий процесс исполнителя. Перед тем как заказывать такой сайт или пробовать сделать его самостоятельно, полезно понимать, о каком именно варианте речь.
 

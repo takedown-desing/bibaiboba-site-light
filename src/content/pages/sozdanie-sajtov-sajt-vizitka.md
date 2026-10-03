@@ -65,6 +65,7 @@ images:
   - { slot: hero, query: "small business owner reviewing simple website on laptop", alt: "Владелец малого бизнеса смотрит сайт-визитку на ноутбуке" }
   - { slot: inline-1, query: "designer comparing website layout options on screen", alt: "Дизайнер сравнивает варианты структуры сайта на экране" }
   - { slot: inline-2, query: "web developer working on website code and design", alt: "Разработчик собирает сайт-визитку за компьютером" }
+  - { slot: inline-3, query: "business card and smartphone on desk", alt: "Визитка и смартфон с сайтом на столе" }
 ---
 Сайт-визитка нужен, когда у компании или эксперта нет задачи вести блог и держать десятки страниц, но важно иметь понятное онлайн-представление: кто вы, чем занимаетесь и как с вами связаться. Создание сайта-визитки закрывает эту задачу компактно: несколько ключевых страниц вместо тяжёлой многостраничной структуры.
 

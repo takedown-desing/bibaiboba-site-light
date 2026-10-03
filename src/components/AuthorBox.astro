@@ -5,7 +5,7 @@ const { author = 'aleksey', date = '2026-10-03' } = Astro.props;
 const list = author === 'both' ? [AUTHORS.aleksey, AUTHORS.valentin] : [AUTHORS[author] || AUTHORS.aleksey];
 const d = new Date(String(date)).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 border-y border-gray-200 py-5 text-[14px]">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-[14px]">
   {list.map((a) => (
     <a href={withBase(a.url)} class="flex items-center gap-3 group">
       <span class="w-10 h-10 rounded-full bg-gray-900 text-white text-[12px] font-semibold grid place-items-center" aria-hidden="true">{a.initials}</span>

@@ -61,6 +61,7 @@ images:
   - { slot: hero, query: "seo analyst reviewing website analytics dashboard laptop", alt: "Специалист проверяет данные сайта перед аудитом" }
   - { slot: inline-1, query: "website speed performance chart screen", alt: "График скорости загрузки сайта при техническом аудите" }
   - { slot: inline-2, query: "digital marketing checklist notebook desk", alt: "Чек-лист этапов SEO-аудита сайта" }
+  - { slot: inline-3, query: "team discussing audit report printed charts meeting", alt: "Обсуждение отчёта по аудиту на встрече" }
 ---
 Сайт может терять заявки по десяткам мелких причин: от медленной загрузки до дублей страниц в индексе. Аудит сайта собирает все эти причины в одном месте и расставляет их по важности, чтобы не угадывать, за что браться первым.
 

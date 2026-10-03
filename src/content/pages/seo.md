@@ -64,6 +64,7 @@ images:
   - { slot: hero, query: "seo analyst reviewing website analytics dashboard", alt: "Специалист анализирует показатели сайта в поисковой выдаче" }
   - { slot: inline-1, query: "digital marketing team planning strategy on whiteboard", alt: "Планирование этапов продвижения сайта на встрече команды" }
   - { slot: inline-2, query: "growth chart search engine ranking data on screen", alt: "График роста позиций сайта в поисковой выдаче на экране" }
+  - { slot: inline-3, query: "keyboard laptop analytics growth chart closeup", alt: "Аналитика роста трафика на экране ноутбука" }
 ---
 
 Продвижение сайта нужно бизнесу не ради позиций как таковых, а ради заявок: чтобы человек, который ищет услугу или товар в Яндексе и Google, доходил до вашего сайта раньше, чем до конкурента. Мы ведём продвижение сайта как процесс на несколько месяцев: от технического аудита и семантики до контента, микроразметки и ежемесячной отчётности, в двух поисковиках одновременно.

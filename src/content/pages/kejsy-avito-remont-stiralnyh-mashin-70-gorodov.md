@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "washing machine repair technician tools", alt: "Мастер ремонтирует стиральную машину" }
   - { slot: inline-1, query: "map of russia cities network", alt: "География запуска продвижения по городам России" }
+  - { slot: inline-2, query: "repairman with toolbox at customer door", alt: "Мастер с инструментами приехал на вызов" }
 ---
 Ремонт стиральных машин: ниша, где решение о звонке мастеру принимается быстро, а конкуренция на Авито есть почти в каждом городе. Разбираем кейс запуска продвижения с нуля сразу в 70+ городах России.
 

@@ -45,6 +45,7 @@ related:
 images:
   - { slot: hero, query: "tire warehouse shelves new and used tires", alt: "Склад с новыми и б/у шинами" }
   - { slot: inline-1, query: "forklift tire stacking warehouse logistics", alt: "Погрузка шин на складе" }
+  - { slot: inline-2, query: "car tire change service garage", alt: "Шиномонтаж в автосервисе" }
 ---
 Склад с большим ассортиментом новых и б/у шин продвигал аккаунт на Авито самостоятельно, но постоянные изменения площадки усложняли работу. За месяц регулярный выпуск объявлений и автоархив проданного вернули рост контактов.
 

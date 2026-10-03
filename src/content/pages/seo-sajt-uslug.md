@@ -62,6 +62,7 @@ images:
   - { slot: hero, query: "craftsman repairing appliance at customer home service call", alt: "Мастер выполняет услугу по вызову клиента" }
   - { slot: inline-1, query: "customer service representative answering phone call in office", alt: "Специалист принимает звонок клиента по заявке" }
   - { slot: inline-2, query: "small business owner checking leads and messages on laptop and phone", alt: "Владелец сервисного бизнеса проверяет заявки с разных каналов" }
+  - { slot: inline-3, query: "plumber service worker talking to client home", alt: "Мастер обсуждает заказ с клиентом" }
 ---
 
 Сайт компании, которая оказывает услуги, живёт за счёт звонков и заявок, а не только за счёт позиций в выдаче. Продвижение сайта услуг строим вокруг этой цели: находим, по каким запросам ищут именно ваши услуги, и делаем так, чтобы человек на сайте позвонил или оставил заявку, а не ушёл к конкуренту. Это часть общего [SEO-продвижения сайта](/seo/), но с акцентом на специфику сервисного бизнеса.

@@ -64,6 +64,8 @@ related:
 images:
   - { slot: hero, query: "designer sketching single page website layout on tablet", alt: "Дизайнер продумывает макет лендинга на планшете" }
   - { slot: inline-1, query: "marketing team reviewing landing page mockup on screen", alt: "Команда обсуждает макет лендинга на экране" }
+  - { slot: inline-2, query: "landing page design on laptop mockup", alt: "Макет лендинга на экране ноутбука" }
+  - { slot: inline-3, query: "person filling contact form on phone", alt: "Посетитель оставляет заявку с телефона" }
 ---
 Лендинг нужен, когда у бизнеса есть одно чёткое предложение и источник трафика, под который важно сразу показать результат: объявление на Авито, рекламная кампания, рассылка или ссылка из соцсети. Создание лендинга закрывает эту задачу: мы разрабатываем одну страницу, которая принимает посетителя с конкретного канала и ведёт его к заявке без лишних отвлечений.
 

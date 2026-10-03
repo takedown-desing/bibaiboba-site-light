@@ -63,6 +63,8 @@ related:
 images:
   - { slot: hero, query: "developer fixing website code on laptop screen close up", alt: "Разработчик вносит правки в код сайта на ноутбуке" }
   - { slot: inline-1, query: "person checking website loading speed on phone urgently", alt: "Проверка скорости загрузки сайта на телефоне" }
+  - { slot: inline-2, query: "web developer fixing bug on laptop at desk", alt: "Разработчик исправляет ошибку на сайте" }
+  - { slot: inline-3, query: "website on smartphone and laptop responsive design", alt: "Сайт на телефоне и ноутбуке после доработки" }
 ---
 Сайт может быть в целом нормальным и всё равно мешать бизнесу: форма не отправляется, страница медленно открывается с телефона, блок на видном месте выглядит криво после обновления темы. Пересобирать весь сайт из-за одной такой проблемы не нужно: для этого есть доработка сайта.
 
