@@ -313,3 +313,27 @@ body { background: #fff; color: var(--ink); font-family: ui-sans-serif, system-u
 .mosaic-tile.has-art .mt-bottom { max-width: 56%; }
 @media (min-width: 1100px) { .mosaic-tile.w4.has-art .mt-bottom { max-width: 100%; } .mosaic-tile.w4.has-art .mt-art { max-width: 70%; } }
 @media (max-width: 767px) { .mosaic-tile.has-art .mt-bottom { max-width: 100%; } .mosaic-tile.has-art .mt-art { max-width: 60%; } }
+
+/* Прямые контакты */
+.contact-links { display: grid; gap: 14px; container-type: inline-size; }
+@media (min-width: 900px) { .contact-links:not(.is-single) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cl-person { background: #fff; border-radius: 28px; padding: 22px; display: grid; gap: 16px; align-content: start; }
+.cl-head { display: flex; align-items: center; gap: 14px; }
+.cl-head img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.cl-head b { display: block; font-size: 18px; }
+.cl-head span { font-size: 14px; color: var(--ink-2); }
+.cl-person ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+@container (min-width: 520px) { .is-single .cl-person ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cl-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px 10px 10px; border-radius: 16px; background: var(--bg-soft); text-decoration: none; color: var(--ink); transition: background .3s, transform .3s var(--ease); min-width: 0; }
+.cl-link:hover { background: #ececec; transform: translateY(-1px); }
+.cl-icon { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--ink); }
+.cl-icon svg { width: 20px; height: 20px; }
+.cl-telegram .cl-icon { background: #229ED9; }
+.cl-linkedin .cl-icon { background: #0A66C2; }
+.cl-github .cl-icon { background: #181717; }
+.cl-mail .cl-icon { background: var(--accent); }
+.cl-dzen .cl-icon { background: #111; }
+.cl-text { display: grid; min-width: 0; }
+.cl-label { font-size: 12px; color: var(--ink-2); }
+.cl-handle { font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cl-mail .cl-handle { white-space: normal; overflow-wrap: anywhere; text-overflow: clip; }

@@ -15,6 +15,7 @@ import { withBase, AUTHORS } from '../lib/site.mjs';
 import { previewFor } from '../lib/previews.mjs';
 import CaseCard from '../components/CaseCard.astro';
 import CaseMosaic from '../components/CaseMosaic.astro';
+import ContactLinks from '../components/ContactLinks.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -60,6 +61,8 @@ const hd = caseHighlights ? { ...d, highlights: d.highlights?.length ? d.highlig
       <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-14">
         <div class={`grid gap-6 lg:gap-8 ${isForm ? 'xl:grid-cols-[minmax(0,1fr)_minmax(0,520px)] items-start' : toc.length > 2 ? 'xl:grid-cols-[minmax(0,1fr)_280px] items-start' : ''}`}>
           <div class="grid gap-5 sm:gap-6 min-w-0">
+            {d.type === 'contact' && <ContactLinks />}
+            {d.type === 'person' && <ContactLinks only={d.url === AUTHORS.valentin.url ? 'valentin' : 'aleksey'} />}
             <article class="prose-bb flow">
               <Content />
             </article>
