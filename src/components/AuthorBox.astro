@@ -8,7 +8,7 @@ const d = new Date(String(date)).toLocaleDateString('ru-RU', { day: 'numeric', m
 <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-[14px]">
   {list.map((a) => (
     <a href={withBase(a.url)} class="flex items-center gap-3 group">
-      <span class="w-10 h-10 rounded-full bg-gray-900 text-white text-[12px] font-semibold grid place-items-center" aria-hidden="true">{a.initials}</span>
+      {a.photoSm ? <img src={withBase(a.photoSm)} alt={a.name} width="48" height="48" class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" /> : <span class="w-10 h-10 rounded-full bg-gray-900 text-white text-[12px] font-semibold grid place-items-center" aria-hidden="true">{a.initials}</span>}
       <span><span class="block font-semibold group-hover:text-[#F26522] transition-colors">{a.name}</span><span class="text-gray-600">{a.role}</span></span>
     </a>
   ))}
