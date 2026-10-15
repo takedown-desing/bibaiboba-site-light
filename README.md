@@ -1,4 +1,4 @@
-# Биба и Боба — сайт агентства, вариант «Light»
+# Backstage Media — сайт агентства, вариант «Light»
 
 Превью дизайна по промту 1 (светлый, шейдер на первом экране, оранжевый акцент). Второй вариант: [bibaiboba-site-space](https://github.com/takedown-desing/bibaiboba-site-space).
 

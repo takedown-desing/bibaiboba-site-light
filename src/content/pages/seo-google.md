@@ -3,7 +3,7 @@ page_id: P05
 url: /seo/google/
 slug: seo-google
 type: service
-title: "Продвижение сайта в Google: SEO под Google | Биба и Боба"
+title: "Продвижение сайта в Google: SEO под Google | Backstage Media"
 description: "Продвижение сайта в Google: Core Web Vitals, Search Console, E-E-A-T и честная работа со ссылками без накрутки. Расчёт стоимости бесплатный."
 og_title: "Продвижение сайта в Google: SEO под Google"
 og_description: "SEO-продвижение сайта именно в Google: Core Web Vitals, Search Console, E-E-A-T и честная работа со ссылочными сигналами. Техническая часть, контент и видимость в AI-ответах Google в одном проекте."
